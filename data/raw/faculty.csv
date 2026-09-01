@@ -1,0 +1,13 @@
+faculty_id,name,department,research_area,email
+1,Dr. Rajesh Kumar,CSE,Natural Language Processing,rajesh.kumar@university.edu
+2,Dr. Sunita Sharma,CSE,Computer Vision,sunita.sharma@university.edu
+3,Dr. Amit Patel,CSE,Distributed Systems,amit.patel@university.edu
+4,Dr. Priya Nair,MATH,Predictive Analytics,priya.nair@university.edu
+5,Dr. Vikram Reddy,ECE,IoT & Embedded Systems,vikram.reddy@university.edu
+6,Dr. Kavita Singh,CSE,Cybersecurity,kavita.singh@university.edu
+7,Dr. Arjun Desai,CSE,Machine Learning,arjun.desai@university.edu
+8,Dr. Meera Gupta,IT,Cloud Computing,meera.gupta@university.edu
+9,Dr. Sanjay Iyer,CSE,Data Engineering,sanjay.iyer@university.edu
+10,Dr. Rekha Menon,MBA,Product Strategy,rekha.menon@university.edu
+11,Dr. Deepak Joshi,ECE,Robotics,deepak.joshi@university.edu
+12,Dr. Anita Rao,CSE,Deep Learning,anita.rao@university.edu

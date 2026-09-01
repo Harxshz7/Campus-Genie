@@ -1,0 +1,101 @@
+student_id,name,email,year,department,career_goal,available_hours_per_week,gpa
+1,Arjun Mehta,arjun.mehta@university.edu,2,CSE,AI Engineer,15,8.5
+2,Priya Sharma,priya.sharma@university.edu,2,CSE,Product Manager,12,8.8
+3,Rahul Gupta,rahul.gupta@university.edu,3,MATH,Data Scientist,10,9.1
+4,Sneha Reddy,sneha.reddy@university.edu,2,ECE,IoT Developer,14,7.9
+5,Vikram Singh,vikram.singh@university.edu,3,CSE,ML Researcher,18,9.3
+6,Ananya Patel,ananya.patel@university.edu,2,IT,Full Stack Developer,16,8.2
+7,Karthik Nair,karthik.nair@university.edu,3,CSE,Cloud Architect,12,8.6
+8,Deepa Krishnan,deepa.krishnan@university.edu,2,CSE,Data Engineer,14,8.4
+9,Rohan Iyer,rohan.iyer@university.edu,4,CSE,Software Engineer,8,8.7
+10,Meera Joshi,meera.joshi@university.edu,2,MBA,Business Analyst,10,8.9
+11,Hemal Balan,student11@university.edu,1,ECE,Mobile Developer,5,6.8
+12,Dhruv Basak,student12@university.edu,4,ME,IoT Developer,5,7.4
+13,Anjali Sen,student13@university.edu,3,ECE,Backend Developer,20,6.4
+14,Yashvi Nori,student14@university.edu,4,MBA,Software Engineer,18,8.6
+15,Abhimanyu Setty,student15@university.edu,3,IT,Backend Developer,12,6.5
+16,Mugdha Kala,student16@university.edu,2,IT,Full Stack Developer,12,7.5
+17,Panini Bali,student17@university.edu,4,ECE,Software Engineer,18,7.0
+18,Arin Lall,student18@university.edu,3,CSE,Cloud Architect,5,6.3
+19,Shaurya Dugar,student19@university.edu,3,MBA,Business Analyst,5,6.9
+20,Turvi Mangat,student20@university.edu,2,CSE,Data Scientist,18,7.8
+21,Dominic Sani,student21@university.edu,2,Civil,UX Designer,20,8.8
+22,Abhimanyu Balan,student22@university.edu,2,ECE,Product Manager,20,9.5
+23,Krishna More,student23@university.edu,1,CSE,Software Engineer,12,9.4
+24,Bhavini Desai,student24@university.edu,2,Civil,IoT Developer,15,7.8
+25,Mitesh Mann,student25@university.edu,4,ECE,Business Analyst,5,7.6
+26,Ikshita Savant,student26@university.edu,3,MBA,Full Stack Developer,5,6.3
+27,Benjamin Shankar,student27@university.edu,2,MBA,Cybersecurity Analyst,10,6.4
+28,William Grover,student28@university.edu,3,MBA,Product Manager,18,7.6
+29,Akshay Gola,student29@university.edu,2,MBA,Mobile Developer,5,9.2
+30,Udyati Bora,student30@university.edu,1,IT,Software Engineer,8,9.5
+31,Chandani Kalita,student31@university.edu,3,IT,UX Designer,12,6.8
+32,Vedika Gour,student32@university.edu,4,CSE,Product Manager,10,9.6
+33,Jairaj Jhaveri,student33@university.edu,4,IT,UX Designer,5,8.7
+34,Urmi Keer,student34@university.edu,4,IT,Business Analyst,18,7.1
+35,Hamsini Bassi,student35@university.edu,3,MBA,ML Researcher,15,8.5
+36,Ayush Tak,student36@university.edu,4,ME,Data Scientist,8,6.1
+37,Mitali Natt,student37@university.edu,3,Civil,Product Manager,20,9.6
+38,Oviya Sanghvi,student38@university.edu,3,ME,DevOps Engineer,20,7.8
+39,Maya Tara,student39@university.edu,1,Civil,Mobile Developer,8,7.5
+40,Qasim Borra,student40@university.edu,3,Civil,AI Engineer,10,7.1
+41,Rehaan Ghose,student41@university.edu,3,EEE,AI Engineer,18,6.1
+42,Jyoti Kaur,student42@university.edu,2,IT,Cybersecurity Analyst,12,6.1
+43,Edhitha Bhat,student43@university.edu,1,CSE,Product Manager,18,6.4
+44,Nisha Kalla,student44@university.edu,2,ECE,Backend Developer,8,6.3
+45,Barkha Varma,student45@university.edu,4,MBA,Data Engineer,5,7.9
+46,Nathan Malhotra,student46@university.edu,2,EEE,DevOps Engineer,15,7.0
+47,Vrishti Kota,student47@university.edu,2,EEE,AI Engineer,18,9.3
+48,Xavier Gola,student48@university.edu,3,EEE,ML Researcher,10,6.8
+49,Nikita Dara,student49@university.edu,4,EEE,ML Researcher,18,6.7
+50,Imaran Sarraf,student50@university.edu,1,MBA,Business Analyst,15,6.5
+51,Bachittar Dutt,student51@university.edu,1,ECE,Data Engineer,20,7.8
+52,Varsha Dubey,student52@university.edu,3,ME,Backend Developer,15,7.4
+53,Chavvi Agarwal,student53@university.edu,3,CSE,Mobile Developer,8,6.9
+54,Jackson Soman,student54@university.edu,2,Civil,AI Engineer,20,9.0
+55,Ira Ganesh,student55@university.edu,4,MATH,Full Stack Developer,20,8.2
+56,Varsha Kala,student56@university.edu,3,MBA,ML Researcher,8,9.7
+57,Yashasvi Krishnamurthy,student57@university.edu,3,ME,IoT Developer,8,7.3
+58,Urvi Tak,student58@university.edu,2,MBA,Data Scientist,15,7.4
+59,Arya Dalal,student59@university.edu,2,ME,Cybersecurity Analyst,12,6.4
+60,Lakshmi Dave,student60@university.edu,3,MBA,Mobile Developer,8,9.5
+61,Yashoda Balakrishnan,student61@university.edu,1,MBA,Backend Developer,20,8.1
+62,Nidra Kanda,student62@university.edu,1,EEE,Cloud Architect,15,9.7
+63,George Korpal,student63@university.edu,4,EEE,Full Stack Developer,20,7.2
+64,Aachal Mangat,student64@university.edu,4,MATH,DevOps Engineer,8,8.6
+65,Jagrati Arya,student65@university.edu,3,IT,Full Stack Developer,15,9.3
+66,Dipta Comar,student66@university.edu,3,MBA,Backend Developer,12,9.6
+67,Gaurav Tak,student67@university.edu,2,Civil,Product Manager,12,7.0
+68,Udyati Mangal,student68@university.edu,3,MATH,UX Designer,5,9.4
+69,Aradhana Prabhu,student69@university.edu,2,ECE,Cloud Architect,10,9.5
+70,Gaurika Oak,student70@university.edu,4,MATH,Mobile Developer,12,7.4
+71,Hitesh Hayre,student71@university.edu,3,IT,Product Manager,5,9.6
+72,Nimrat Pandey,student72@university.edu,3,MATH,Full Stack Developer,20,7.9
+73,Radha Bath,student73@university.edu,1,IT,DevOps Engineer,20,9.1
+74,Januja Vyas,student74@university.edu,3,ME,Product Manager,20,6.6
+75,Anmol Shukla,student75@university.edu,2,MBA,Data Scientist,10,6.1
+76,Gautami Sagar,student76@university.edu,3,EEE,Data Scientist,15,6.8
+77,Vanya Thaker,student77@university.edu,3,CSE,Business Analyst,15,6.6
+78,Yashoda Khare,student78@university.edu,4,ECE,Data Scientist,12,7.6
+79,Vyanjana Gera,student79@university.edu,4,ME,Software Engineer,15,6.2
+80,Zansi Vaidya,student80@university.edu,1,IT,Data Engineer,20,8.1
+81,Theodore Das,student81@university.edu,1,MBA,Full Stack Developer,18,7.5
+82,Hredhaan Gill,student82@university.edu,2,Civil,Full Stack Developer,15,6.2
+83,Avi Thakkar,student83@university.edu,3,Civil,Backend Developer,18,8.6
+84,Ryan Bath,student84@university.edu,1,CSE,Product Manager,12,8.8
+85,Darsh Dugar,student85@university.edu,4,EEE,AI Engineer,12,6.1
+86,Naveen Tak,student86@university.edu,3,EEE,IoT Developer,20,6.6
+87,Champak Chhabra,student87@university.edu,2,ME,Data Scientist,20,8.5
+88,Oscar Kapoor,student88@university.edu,4,Civil,Software Engineer,10,9.0
+89,Samaksh Srinivasan,student89@university.edu,2,CSE,Business Analyst,20,8.8
+90,Chameli Devi,student90@university.edu,3,Civil,Full Stack Developer,18,6.7
+91,Bhavna Nazareth,student91@university.edu,2,ME,Cloud Architect,5,8.1
+92,Ria Krishnan,student92@university.edu,1,IT,Data Engineer,15,7.4
+93,Sanya Yohannan,student93@university.edu,2,CSE,Backend Developer,8,6.3
+94,Hitesh Vora,student94@university.edu,4,CSE,Cloud Architect,18,8.9
+95,Ayush Sethi,student95@university.edu,3,MATH,Data Engineer,20,9.0
+96,Jack Krishnan,student96@university.edu,2,EEE,Business Analyst,15,9.6
+97,Tristan Kapadia,student97@university.edu,3,MBA,Software Engineer,5,7.5
+98,Nakul Din,student98@university.edu,1,MATH,Cloud Architect,5,7.1
+99,Upasna Chandra,student99@university.edu,1,CSE,AI Engineer,10,6.9
+100,Girik Gera,student100@university.edu,3,ECE,Data Engineer,15,7.3

@@ -1,0 +1,21 @@
+event_id,title,description,event_type,date,duration_hours,weekly_hours,capacity
+1,Applied AI Workshop,Hands-on workshop on building AI applications with TensorFlow,Workshop,2026-10-15,16,4,50
+2,Python for Data Science Bootcamp,3-day intensive bootcamp on Python data science stack,Bootcamp,2026-09-20,24,8,60
+3,React Masterclass,"Advanced React patterns, hooks, and state management",Workshop,2026-10-05,12,4,40
+4,Cloud Deployment on AWS Seminar,"Deploy applications on AWS: EC2, Lambda, S3",Seminar,2026-11-01,6,3,80
+5,Intro to Machine Learning,Beginner-friendly ML workshop with hands-on exercises,Workshop,2026-09-15,12,4,60
+6,Cybersecurity CTF Challenge,Capture-the-flag competition for all skill levels,Workshop,2026-10-25,8,0,100
+7,UX Design Sprint,2-day design thinking and prototyping workshop,Workshop,2026-10-10,16,0,35
+8,DevOps Bootcamp,"Docker, Kubernetes, and CI/CD pipelines in practice",Bootcamp,2026-11-15,24,8,40
+9,Big Data with Spark and Databricks,Process large datasets using Apache Spark,Workshop,2026-11-20,12,4,45
+10,Startup Pitch Night,Learn to pitch your startup idea to investors,Seminar,2026-10-20,4,0,100
+11,Deep Learning with PyTorch,Build neural networks using PyTorch framework,Workshop,2026-11-05,16,4,40
+12,REST API Design Patterns,Design scalable and maintainable REST APIs,Seminar,2026-09-25,6,0,60
+13,IoT Hands-On Lab,Build IoT prototypes with Arduino and Raspberry Pi,Workshop,2026-10-30,12,4,30
+14,Technical Writing Workshop,"Write clear documentation, blogs, and research papers",Workshop,2026-09-18,8,0,50
+15,NLP with Transformers Seminar,"Latest advances in NLP: BERT, GPT, and beyond",Seminar,2026-11-10,6,3,50
+16,Mobile App Development Workshop,Build cross-platform apps with React Native,Workshop,2026-10-08,12,4,40
+17,Data Engineering on Databricks,Build production ETL pipelines on Databricks,Workshop,2026-11-25,16,4,35
+18,Agile & Scrum Workshop,Practice agile methodologies and scrum ceremonies,Workshop,2026-09-22,8,0,60
+19,Blockchain Development Bootcamp,Build smart contracts on Ethereum and Solana,Bootcamp,2026-12-01,24,8,30
+20,Research Methodology Seminar,How to conduct and publish academic research,Seminar,2026-09-28,6,0,80

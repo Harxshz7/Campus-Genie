@@ -1,0 +1,19 @@
+placement_id,company,role,description,package_lpa,min_year,application_deadline,positions_available
+1,TechCorp India,AI Engineer,Build and deploy ML models for product features,18.0,3,2027-01-15,5
+2,DataMinds Analytics,Data Scientist,Statistical modeling and data analysis for business insights,15.0,3,2027-01-20,8
+3,WebNova Solutions,Full Stack Developer,Build scalable web applications using React and Node.js,12.0,3,2027-02-01,10
+4,CloudFirst Technologies,Cloud Engineer,Design and manage cloud infrastructure on AWS,16.0,3,2027-01-25,6
+5,SecureNet Systems,Security Analyst,Conduct security assessments and build defense systems,14.0,3,2027-02-10,4
+6,InnoBot Robotics,IoT Engineer,Design and deploy IoT solutions for smart buildings,13.0,3,2027-01-30,5
+7,FinTech Global,Backend Developer,Build high-throughput financial transaction systems,16.5,3,2027-02-05,6
+8,AppWorks Mobile,Mobile Developer,Develop cross-platform mobile applications,11.0,3,2027-02-15,8
+9,DataPipe Systems,Data Engineer,Build and maintain large-scale data pipelines,17.0,3,2027-01-28,4
+10,QuantumLeap AI,ML Research Engineer,Research and develop novel ML algorithms,22.0,4,2027-01-10,3
+11,ProductHive,Associate Product Manager,Drive product strategy and user experience,14.0,3,2027-02-20,5
+12,ChainLogic,Blockchain Developer,Build decentralized applications and smart contracts,15.0,3,2027-02-25,3
+13,DevOpsHub,DevOps Engineer,Automate infrastructure and deployment pipelines,15.5,3,2027-02-08,5
+14,DesignStudio,UX Designer,Create intuitive user experiences through research and design,11.5,3,2027-02-28,4
+15,MegaCorp Software,Software Engineer,General software engineering across the stack,14.0,3,2027-01-20,15
+16,NeuralTech Labs,Computer Vision Engineer,Build CV systems for autonomous vehicles,20.0,4,2027-01-15,3
+17,SmartData Inc.,Business Analyst,Translate business needs into data-driven insights,10.0,3,2027-03-01,8
+18,TechCorp India,Data Platform Engineer,Build and scale data platforms on Databricks,19.0,3,2027-01-18,4

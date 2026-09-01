@@ -1,0 +1,11 @@
+hackathon_id,title,description,theme,date,duration_hours,team_size_min,team_size_max,prize_pool
+1,DataHack 2026,48-hour data science and ML hackathon,AI/ML,2026-11-15,48,2,4,"₹1,00,000 + Internship offers"
+2,WebCraft Hackathon,Build innovative web applications in 24 hours,Web Dev,2026-10-20,24,2,4,"₹75,000 + Cloud credits"
+3,IoT Innovation Challenge,Build IoT solutions for campus problems,IoT,2026-12-05,36,2,4,"₹80,000 + Hardware kits"
+4,CyberShield CTF,Cybersecurity capture-the-flag competition,Cybersecurity,2026-10-28,24,2,3,"₹60,000 + Security certifications"
+5,Cloud Deploy Challenge,Deploy scalable applications on cloud in 24 hours,Cloud,2026-11-22,24,2,3,"₹50,000 + AWS credits"
+6,Startup Weekend,From idea to prototype in 54 hours,Entrepreneurship,2026-11-08,54,3,5,"₹1,50,000 + Incubation support"
+7,Blockchain Build,Build decentralized applications on Ethereum/Solana,Blockchain,2026-12-12,36,2,4,"₹1,00,000 + Crypto prizes"
+8,HealthTech Hackathon,AI solutions for healthcare challenges,AI/ML,2026-12-08,48,2,4,"₹1,20,000 + Hospital partnerships"
+9,Data Engineering Challenge,Build production-grade data pipelines,Data Engineering,2026-11-30,36,2,3,"₹80,000 + Databricks licenses"
+10,Mobile App Jam,Build a mobile app prototype in 24 hours,Mobile,2026-10-15,24,2,4,"₹50,000 + Play Store credits"

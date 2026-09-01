@@ -1,0 +1,31 @@
+project_id,title,description,difficulty,weekly_hours,duration_weeks,status,max_members
+1,Campus Backend API,Build RESTful APIs for campus services using Java Spring Boot,Intermediate,6,8,Open,5
+2,Student Dashboard Web App,Full-stack dashboard with React frontend and Node.js backend,Intermediate,8,10,Open,4
+3,ML Sentiment Analyzer,Build a sentiment analysis tool using Python and NLP,Advanced,8,8,Open,3
+4,IoT Smart Classroom,Sensor-based classroom monitoring with embedded systems,Intermediate,6,10,Open,4
+5,Data Pipeline for Campus Analytics,ETL pipeline using Spark and Databricks,Advanced,8,8,Open,3
+6,Mobile Campus Guide App,Cross-platform mobile app for campus navigation,Intermediate,6,10,Open,4
+7,Cyber Threat Detection System,Network traffic analysis for security threats,Advanced,8,12,Open,3
+8,Blockchain Voting System,Decentralized voting on Ethereum,Advanced,8,10,Open,3
+9,Campus Chatbot,AI-powered chatbot for student FAQs,Intermediate,5,6,Open,4
+10,Computer Vision for Attendance,Face recognition attendance system,Advanced,8,10,Open,3
+11,Cloud Infrastructure Manager,Automated cloud resource provisioning tool,Advanced,6,8,Open,3
+12,Interactive Data Dashboard,Real-time data visualization with Plotly and Dash,Beginner,4,6,Open,5
+13,Recommendation Engine,Movie/course recommendation system using collaborative filtering,Intermediate,6,8,Open,4
+14,DevOps Automation Suite,CI/CD pipeline with Docker and GitHub Actions,Intermediate,5,6,Open,3
+15,E-commerce Microservices,Microservice architecture for an online store,Advanced,8,12,Open,4
+16,NLP Text Summarizer,Automatic text summarization using transformer models,Advanced,7,8,Open,3
+17,Startup Business Plan Tool,Interactive tool for business model canvas creation,Beginner,4,6,Open,5
+18,Real-time Chat Application,WebSocket-based messaging app,Intermediate,6,8,Open,4
+19,Predictive Analytics for Placements,ML model to predict placement outcomes,Intermediate,6,8,Open,4
+20,AR Campus Navigator,Augmented reality campus tour app,Advanced,8,12,Open,3
+21,Smart Energy Monitor,IoT-based energy consumption tracking for campus buildings,Intermediate,5,8,Open,4
+22,API Gateway Framework,Build a lightweight API gateway with rate limiting and auth,Advanced,6,8,Open,3
+23,Document Intelligence System,Extract and classify info from campus documents using AI,Advanced,7,10,Open,3
+24,Open Source Contribution Tracker,Platform to track and gamify open source contributions,Beginner,3,6,Open,6
+25,Campus Data Warehouse,Central data repository for all campus systems,Advanced,8,12,Open,3
+26,Technical Blog Platform,Medium-like platform for campus tech articles,Beginner,4,6,Open,5
+27,Automated Testing Framework,Build a testing framework for campus applications,Intermediate,5,8,Open,4
+28,Health & Fitness Tracker,Wearable data analytics for student wellness,Intermediate,5,8,Open,4
+29,Supply Chain Optimizer,ML-based optimization for campus supply chain,Advanced,7,10,Open,3
+30,Peer Learning Matchmaker,Algorithm to match students for peer learning sessions,Beginner,3,4,Open,6

@@ -1,0 +1,13 @@
+club_id,name,description,focus_area,weekly_hours,meeting_day
+1,AI/ML Club,Explore artificial intelligence and machine learning through projects and talks,AI/ML,4,Wednesday
+2,Web Development Society,Build modern web applications and learn latest frameworks,Web Dev,4,Monday
+3,Data Analytics Club,Data-driven insights and visualization for real-world problems,Data Science,3,Thursday
+4,Robotics & IoT Lab,Build robots and IoT devices for campus automation,IoT/Robotics,5,Friday
+5,Entrepreneurship Cell,"Startup culture, business planning, and pitching",Entrepreneurship,3,Tuesday
+6,Cybersecurity Club,"Ethical hacking, CTF competitions, and security audits",Cybersecurity,4,Saturday
+7,Open Source Contributors,Contribute to major open-source projects together,Open Source,3,Wednesday
+8,Cloud Computing Club,Learn and implement cloud solutions on AWS/Azure/GCP,Cloud,4,Thursday
+9,Design Thinking Lab,"User research, prototyping, and design sprints",Design,3,Monday
+10,Competitive Programming Club,DSA practice and competitive programming contests,Programming,5,Saturday
+11,Blockchain & Web3 Society,"Explore decentralized tech, smart contracts, and DeFi",Blockchain,3,Friday
+12,Research & Publications Cell,Support student research and academic paper writing,Research,3,Tuesday

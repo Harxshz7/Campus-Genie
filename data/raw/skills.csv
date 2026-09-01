@@ -1,0 +1,51 @@
+skill_id,skill_name,category,difficulty_level
+1,Python,Programming,2
+2,Java,Programming,2
+3,JavaScript,Programming,2
+4,C++,Programming,3
+5,SQL,Data,2
+6,R,Programming,2
+7,HTML/CSS,Web,1
+8,TypeScript,Programming,3
+9,Machine Learning,AI/ML,4
+10,Deep Learning,AI/ML,5
+11,Natural Language Processing,AI/ML,5
+12,Computer Vision,AI/ML,5
+13,TensorFlow,AI/ML,3
+14,PyTorch,AI/ML,3
+15,Scikit-Learn,AI/ML,3
+16,Data Analysis,Data,2
+17,Statistics,Data,3
+18,Data Visualization,Data,2
+19,Big Data (Spark),Data,4
+20,Cloud Computing (AWS),Cloud,3
+21,Databricks,Data,3
+22,Data Engineering,Data,4
+23,ETL Pipelines,Data,3
+24,React,Web,3
+25,Node.js,Web,3
+26,REST APIs,Web,2
+27,Django/Flask,Web,3
+28,UI/UX Design,Design,2
+29,Mobile Development,Web,3
+30,Docker,DevOps,3
+31,Git/Version Control,DevOps,1
+32,Linux,DevOps,2
+33,CI/CD,DevOps,3
+34,IoT/Embedded Systems,Domain,3
+35,Cybersecurity,Domain,4
+36,Blockchain,Domain,4
+37,Product Management,Soft Skills,3
+38,Public Speaking,Soft Skills,2
+39,Technical Writing,Soft Skills,2
+40,Teamwork,Soft Skills,1
+41,Leadership,Soft Skills,2
+42,Problem Solving,Soft Skills,2
+43,Agile/Scrum,Soft Skills,2
+44,Model Deployment,AI/ML,4
+45,Research Methods,Soft Skills,3
+46,End-to-End ML,AI/ML,4
+47,Presentation Skills,Soft Skills,2
+48,CAD/3D Modeling,Domain,3
+49,Circuits & Electronics,Domain,3
+50,Sensor Data Processing,Domain,4

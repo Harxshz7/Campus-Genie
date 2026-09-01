@@ -1,0 +1,16 @@
+research_id,title,description,faculty_id,weekly_hours,duration_weeks,open_positions,min_year
+1,NLP for Indian Languages,"Build NLP models for Hindi, Tamil, and Telugu text processing",1,8,16,2,2
+2,Autonomous Drone Navigation,Computer vision for drone obstacle avoidance,2,10,20,2,3
+3,Distributed Database Optimization,Performance tuning for distributed NoSQL systems,3,6,12,3,3
+4,Predictive Student Outcomes,ML models to predict student academic performance,4,6,12,2,2
+5,Smart Campus IoT Network,Large-scale IoT sensor network for campus monitoring,5,8,16,2,2
+6,Network Intrusion Detection using AI,Deep learning for network security threat detection,6,8,16,2,3
+7,Reinforcement Learning for Robotics,Apply RL to robot motion planning,7,10,20,2,3
+8,Serverless Architecture Patterns,Research efficient serverless computing patterns on AWS,8,6,12,2,2
+9,Real-time Data Pipeline Optimization,Optimize streaming data pipelines using Kafka and Spark,9,8,16,2,3
+10,AI for Product Analytics,Use ML to analyze user behavior and product metrics,10,5,10,2,2
+11,Swarm Robotics,Coordinate multiple robots for collaborative tasks,11,10,20,2,2
+12,Generative AI for Education,Apply LLMs and generative AI to personalized learning,12,8,16,2,3
+13,Federated Learning for Privacy,ML without sharing raw data across institutions,7,8,16,2,3
+14,Blockchain for Academic Credentials,Decentralized academic credential verification,3,6,12,2,2
+15,Explainable AI for Healthcare,Make ML model decisions interpretable for clinicians,12,8,16,2,3
