@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: var(--font-kalam), cursive, sans-serif;
+    --font-body: var(--font-patrick), cursive, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #fdfbf7;
+    color: #2d2d2d;
+    background-image: radial-gradient(#e5e0d8 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom Wobbly Border Radius Utilities */
+.wobbly-sm {
+  border-radius: 180px 15px 195px 15px/15px 195px 15px 180px;
+}
+
+.wobbly-md {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+.wobbly-lg {
+  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+}
+
+.wobbly-pill {
+  border-radius: 255px 120px 225px 120px/120px 225px 120px 255px;
+}
+
+/* Hard Offset Box Shadows */
+.sketch-shadow-sm {
+  box-shadow: 3px 3px 0px #2d2d2d;
+}
+
+.sketch-shadow {
+  box-shadow: 5px 5px 0px #2d2d2d;
+}
+
+.sketch-shadow-lg {
+  box-shadow: 8px 8px 0px #2d2d2d;
+}
+
+.sketch-shadow-red {
+  box-shadow: 5px 5px 0px #ff4d4d;
+}
+
+.sketch-shadow-blue {
+  box-shadow: 5px 5px 0px #2d5da1;
+}
+
+/* Interactive Button States */
+.sketch-btn {
+  transition: all 0.1s ease-in-out;
+}
+
+.sketch-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #2d2d2d;
+}
+
+.sketch-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px #2d2d2d;
+}
+
+/* Focus Visible Blue Ring (Accessibility constraint) */
+input:focus-visible, textarea:focus-visible, button:focus-visible {
+  outline: 3px solid #2d5da1;
+  outline-offset: 2px;
+}
+
+/* Scribble Out Effect for Changed Steps */
+.scribble-strikethrough {
+  position: relative;
+  display: inline-block;
+}
+
+.scribble-strikethrough::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  top: 45%;
+  width: 110%;
+  height: 4px;
+  background-color: #ff4d4d;
+  border-radius: 2px;
+  transform: rotate(-2deg);
+  box-shadow: 0px 2px 0px rgba(0,0,0,0.15);
+}
+
+/* Wavy Underline for Links */
+.wavy-underline {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #ff4d4d;
+  text-underline-offset: 4px;
+}
