@@ -2,66 +2,66 @@
 "use client";
 
 import React from "react";
-import { Terminal, Database, Sparkles, Compass } from "lucide-react";
+import { Sparkles, Compass, Lightbulb } from "lucide-react";
 
 export const Header: React.FC = () => {
   return (
-    <header className="sticky top-0 z-50 w-full bg-background border-b-4 border-pure-black">
-      {/* Top micro-banner */}
-      <div className="bg-pure-black text-pure-white px-4 py-1.5 flex justify-between items-center text-xs font-mono tracking-wider">
+    <header className="sticky top-0 z-50 w-full bg-paper/95 backdrop-blur-sm border-b-[2.5px] border-ink">
+      {/* Top hand-drawn micro-banner */}
+      <div className="bg-paper-yellow border-b-2 border-ink px-4 py-1.5 flex justify-between items-center text-sm font-hand">
         <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 bg-pure-white animate-pulse"></span>
-          <span>DATABRICKS GENIE SPACE : ACTIVE</span>
+          <span className="inline-block w-2.5 h-2.5 rounded-full bg-sketch-red border border-ink animate-bounce"></span>
+          <span className="font-bold tracking-wide">✨ Databricks Genie Space: Connected & Reasoning</span>
         </div>
-        <div className="hidden sm:flex items-center gap-6">
-          <span>CATALOG: <strong className="underline decoration-1">campus_genie</strong></span>
-          <span>SCHEMA: <strong className="underline decoration-1">opportunity_graph</strong></span>
-          <span>TABLES: <strong>16</strong></span>
+        <div className="hidden sm:flex items-center gap-4 text-xs">
+          <span>Catalog: <strong className="underline decoration-wavy decoration-sketch-blue">campus_genie</strong></span>
+          <span>Schema: <strong className="underline decoration-wavy decoration-sketch-red">opportunity_graph</strong></span>
+          <span className="bg-paper-light px-2 py-0.5 border border-ink rounded-full">16 Tables</span>
         </div>
-        <div className="font-mono text-[11px] text-mono-400">
-          v1.0.0 MONOCHROME
+        <div className="text-xs text-ink-muted">
+          ✏️ Hand-Drawn Edition
         </div>
       </div>
 
       {/* Main navigation bar */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-pure-black text-pure-white flex items-center justify-center font-headline text-2xl font-bold border-2 border-pure-black">
+          <div className="w-10 h-10 bg-paper-yellowDark border-2 border-ink shadow-sketchSm flex items-center justify-center font-headline text-2xl font-bold wobbly-badge rotate-[-2deg]">
             ✦
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="font-headline text-2xl sm:text-3xl font-black tracking-tight leading-none text-pure-black">
-                CAMPUS RADAR
+              <h1 className="font-headline text-2xl sm:text-3xl font-bold tracking-tight leading-none text-ink">
+                Campus Opportunity Radar
               </h1>
-              <span className="bg-pure-black text-pure-white text-[10px] font-mono px-1.5 py-0.5 uppercase tracking-widest font-semibold">
-                Genie Powered
+              <span className="bg-sketch-red text-white text-[11px] font-hand px-2 py-0.5 wobbly-pill rotate-[1deg] font-bold">
+                Genie AI
               </span>
             </div>
-            <p className="font-mono text-xs text-muted-foreground tracking-wide mt-0.5">
-              Turn Fragmented Campus Data into Sequenced Career Trajectories
+            <p className="text-sm text-ink-muted leading-none mt-1">
+              Your personalized campus opportunity roadmap — sketched by Databricks Genie
             </p>
           </div>
         </div>
 
-        <nav className="flex items-center gap-2 sm:gap-4 font-mono text-xs w-full sm:w-auto justify-between sm:justify-end border-t sm:border-t-0 pt-2 sm:pt-0 border-mono-200">
+        <nav className="flex items-center gap-2 font-hand text-base w-full sm:w-auto justify-between sm:justify-end pt-1 sm:pt-0">
           <a
             href="#query-section"
-            className="px-3.5 py-2 border-2 border-pure-black bg-pure-white text-pure-black hover-invert uppercase font-bold tracking-wider duration-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-pure-black focus-visible:outline-offset-2"
+            className="px-3.5 py-1.5 border-2 border-ink bg-white text-ink shadow-sketchSm hover:bg-paper-yellow wobbly-btn font-bold transition-all text-sm"
           >
-            Launch Query
+            Ask Genie
           </a>
           <a
             href="#reasoning-section"
-            className="px-3.5 py-2 border-2 border-pure-black bg-pure-white text-pure-black hover-invert uppercase font-bold tracking-wider duration-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-pure-black focus-visible:outline-offset-2"
+            className="px-3.5 py-1.5 border-2 border-ink bg-white text-ink shadow-sketchSm hover:bg-paper-green wobbly-btn font-bold transition-all text-sm"
           >
-            Reasoning Graph
+            Graph Trace
           </a>
           <a
             href="#stakeholders-section"
-            className="px-3.5 py-2 border-2 border-pure-black bg-pure-black text-pure-white hover-invert-dark uppercase font-bold tracking-wider duration-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-pure-white focus-visible:outline-offset-2"
+            className="px-3.5 py-1.5 border-2 border-ink bg-paper-yellowDark text-ink shadow-sketchSm hover:bg-paper-yellow wobbly-btn font-bold transition-all text-sm"
           >
-            Stakeholders
+            Pinboard
           </a>
         </nav>
       </div>

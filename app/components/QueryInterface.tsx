@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, Sparkles, RefreshCw, ArrowRight } from "lucide-react";
+import { Send, Sparkles, RefreshCw, ArrowRight, PenTool } from "lucide-react";
 import { SAMPLE_PRESETS } from "@/lib/fixtures";
 import { WhatIfPreset } from "@/lib/types";
 
@@ -34,53 +34,58 @@ export const QueryInterface: React.FC<QueryInterfaceProps> = ({
   };
 
   return (
-    <section id="query-section" className="w-full bg-background border-b-4 border-pure-black py-16 sm:py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="query-section" className="w-full bg-paper bg-paper-grain border-b-[2.5px] border-ink py-12 sm:py-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
           <div>
-            <div className="font-mono text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
-              <span>[ QUERY CONSOLE ]</span>
-              <span>•</span>
-              <span>GENIE NL-TO-GRAPH INTERFACE</span>
+            <div className="font-hand text-sm font-bold text-sketch-blue flex items-center gap-1.5 uppercase tracking-wide">
+              <PenTool className="w-4 h-4" strokeWidth={2.5} />
+              <span>[ Student Query Console ]</span>
             </div>
-            <h2 className="font-headline text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-pure-black mt-2">
-              Describe Your Profile & Goal
+            <h2 className="font-headline text-3xl sm:text-4xl font-bold tracking-tight text-ink mt-1">
+              Tell Genie What You Know & Where You Want to Go 📝
             </h2>
-            <p className="font-body text-base text-foreground mt-2 max-w-2xl">
-              Type your year, current competencies, target company/role, and weekly hour constraints. Genie reasons across 16 tables to synthesize your plan.
+            <p className="font-body text-lg text-ink-light mt-1 max-w-2xl">
+              Type your year, department, current skills, dream career goal, and available hours/week. Genie writes and executes the multi-hop SQL plan for you.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-mono">
-            <span className="px-3 py-1.5 bg-pure-black text-pure-white font-bold">SQL SYNTHESIS READY</span>
-            <span className="px-3 py-1.5 border-2 border-pure-black text-pure-black">16 TABLES LOADED</span>
+          <div className="flex items-center gap-2 text-sm font-hand">
+            <span className="px-3 py-1 bg-paper-yellowDark border-2 border-ink wobbly-badge font-bold shadow-sketchSm">
+              ⚡ 16 Tables Ready
+            </span>
           </div>
         </div>
 
         {/* Preset Selector Chips */}
         <div className="mb-8">
-          <div className="font-mono text-xs font-bold uppercase tracking-wider mb-3 text-pure-black flex items-center gap-2">
-            <Sparkles className="w-4 h-4" strokeWidth={1.5} />
-            <span>Select Benchmark Persona / Scenario:</span>
+          <div className="font-headline text-base font-bold text-ink mb-3 flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-sketch-red" strokeWidth={2.5} />
+            <span>Click a Sample Persona or Scenario to Test:</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {SAMPLE_PRESETS.map((preset) => {
+            {SAMPLE_PRESETS.map((preset, idx) => {
               const isSelected = inputVal === preset.query;
+              const rotations = ["rotate-[-1deg]", "rotate-[1deg]", "rotate-[-0.5deg]", "rotate-[1.5deg]", "rotate-[-1.5deg]", "rotate-[0.5deg]"];
+              const bgColors = ["bg-paper-yellow", "bg-paper-green", "bg-paper-pink", "bg-paper-blue", "bg-white", "bg-paper-card"];
+              const currentRot = rotations[idx % rotations.length];
+              const currentBg = bgColors[idx % bgColors.length];
+
               return (
                 <button
                   key={preset.id}
                   onClick={() => handleSelectPreset(preset)}
-                  className={`p-4 text-left border-2 font-mono text-xs duration-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-pure-black focus-visible:outline-offset-2 ${
+                  className={`p-3.5 text-left border-2 border-ink wobbly-card transition-all duration-snappy shadow-sketchSm hover:shadow-sketch hover:translate-x-[-1px] hover:translate-y-[-1px] ${currentRot} ${
                     isSelected
-                      ? "bg-pure-black text-pure-white border-pure-black"
-                      : "bg-pure-white text-pure-black border-pure-black hover-invert"
+                      ? "bg-sketch-blue text-white"
+                      : `${currentBg} text-ink`
                   }`}
                 >
-                  <div className="font-bold flex items-center justify-between">
+                  <div className="font-headline font-bold text-sm flex items-center justify-between">
                     <span>{preset.label}</span>
-                    <ArrowRight className="w-3.5 h-3.5 opacity-70" strokeWidth={1.5} />
+                    <ArrowRight className="w-4 h-4 opacity-80" strokeWidth={2.5} />
                   </div>
-                  <div className={`text-[11px] mt-1.5 line-clamp-1 ${isSelected ? "text-mono-200" : "text-muted-foreground"}`}>
+                  <div className={`font-body text-sm mt-1 line-clamp-1 ${isSelected ? "text-paper-light" : "text-ink-light"}`}>
                     {preset.description}
                   </div>
                 </button>
@@ -89,15 +94,18 @@ export const QueryInterface: React.FC<QueryInterfaceProps> = ({
           </div>
         </div>
 
-        {/* Input Form */}
-        <form onSubmit={handleSubmit} className="border-4 border-pure-black bg-pure-white p-6 sm:p-8">
+        {/* Input Form with Wobbly Paper Styling */}
+        <form onSubmit={handleSubmit} className="border-[2.5px] border-ink bg-white p-6 sm:p-8 shadow-sketchLg wobbly-card relative">
+          {/* Top washi tape accent */}
+          <div className="absolute -top-3 left-12 w-32 h-6 tape-strip rotate-[-1deg]"></div>
+
           <div className="flex flex-col gap-4">
             <label
               htmlFor="genie-prompt"
-              className="font-mono text-xs font-bold uppercase tracking-widest text-pure-black flex justify-between items-center"
+              className="font-headline text-lg font-bold text-ink flex justify-between items-center"
             >
-              <span>Student Prompt / Question</span>
-              <span className="text-muted-foreground">Natural Language Prompt</span>
+              <span>Write your prompt here:</span>
+              <span className="font-hand text-sm text-sketch-blue font-bold">Natural language query</span>
             </label>
 
             <div className="relative">
@@ -106,42 +114,42 @@ export const QueryInterface: React.FC<QueryInterfaceProps> = ({
                 rows={3}
                 value={inputVal}
                 onChange={(e) => setInputVal(e.target.value)}
-                placeholder="e.g. I am a 2nd year CSE student who knows Java and SQL. I want to become an AI Engineer. What should I do next?"
-                className="w-full p-4 font-headline text-lg sm:text-xl text-pure-black bg-mono-50 border-2 border-pure-black focus:bg-pure-white focus:outline-none resize-y focus-visible:outline focus-visible:outline-2 focus-visible:outline-pure-black"
+                placeholder="e.g. I am a 2nd year CSE student who knows Java and SQL. I want to become an AI Engineer. What opportunities should I pursue and in what order?"
+                className="w-full p-4 font-body text-xl text-ink bg-paper-card border-2 border-ink wobbly-input focus:bg-white focus:outline-none resize-y transition-colors leading-relaxed"
                 required
               />
             </div>
 
             <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 pt-2">
-              <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-foreground">
-                <span className="font-bold uppercase">Tips:</span>
-                <span className="border border-pure-black px-2.5 py-1 bg-mono-100">Include Current Skills</span>
-                <span className="border border-pure-black px-2.5 py-1 bg-mono-100">Include Target Role</span>
-                <span className="border border-pure-black px-2.5 py-1 bg-mono-100">Optional: Hours/Week</span>
+              <div className="flex flex-wrap items-center gap-2 font-hand text-sm text-ink-light">
+                <span className="font-bold text-ink">💡 Tip:</span>
+                <span className="border border-ink px-2.5 py-0.5 bg-paper-yellow wobbly-pill">Mention current skills</span>
+                <span className="border border-ink px-2.5 py-0.5 bg-paper-green wobbly-pill">State target role</span>
+                <span className="border border-ink px-2.5 py-0.5 bg-paper-pink wobbly-pill">Optional: hours/wk</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <button
                   type="button"
                   onClick={() => setInputVal("")}
-                  className="px-4 py-3 font-mono text-xs uppercase border-2 border-pure-black bg-pure-white text-pure-black hover-invert duration-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-pure-black focus-visible:outline-offset-2"
+                  className="btn-sketch-secondary px-4 py-2.5 font-headline text-base font-bold wobbly-btn"
                 >
                   Clear
                 </button>
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="px-8 py-3.5 font-mono text-sm font-bold uppercase tracking-wider bg-pure-black text-pure-white border-2 border-pure-black hover-invert-dark flex items-center justify-center gap-2.5 duration-100 transition-colors disabled:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-pure-black focus-visible:outline-offset-2"
+                  className="btn-sketch-primary px-8 py-3 font-headline text-lg font-bold wobbly-btn flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   {isLoading ? (
                     <>
-                      <RefreshCw className="w-4 h-4 animate-spin" strokeWidth={1.5} />
-                      <span>Reasoning Across Graph...</span>
+                      <RefreshCw className="w-5 h-5 animate-spin" strokeWidth={2.5} />
+                      <span>Genie Reasoning...</span>
                     </>
                   ) : (
                     <>
-                      <span>Traverse Graph</span>
-                      <Send className="w-4 h-4" strokeWidth={1.5} />
+                      <span>Generate Path</span>
+                      <Send className="w-5 h-5" strokeWidth={2.5} />
                     </>
                   )}
                 </button>

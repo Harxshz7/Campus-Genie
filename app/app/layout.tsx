@@ -1,32 +1,25 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Source_Serif_4, JetBrains_Mono } from "next/font/google";
+import { Kalam, Patrick_Hand } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const kalam = Kalam({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-kalam",
   display: "swap",
-  weight: ["400", "600", "700", "900"],
+  weight: ["400", "700"],
 });
 
-const sourceSerif = Source_Serif_4({
+const patrickHand = Patrick_Hand({
   subsets: ["latin"],
-  variable: "--font-source-serif",
+  variable: "--font-patrick-hand",
   display: "swap",
-  weight: ["300", "400", "600", "700"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-  weight: ["400", "500", "700"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
   title: "Campus Opportunity Radar — Powered by Databricks Genie",
   description:
-    "Turn fragmented campus data into personalized, explainable opportunity paths — powered by Databricks Genie multi-hop reasoning over the Unity Catalog Opportunity Graph.",
+    "Turn fragmented campus data into personalized, explainable opportunity paths — sketched and reasoned by Databricks Genie.",
 };
 
 export default function RootLayout({
@@ -37,9 +30,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className={`${kalam.variable} ${patrickHand.variable} scroll-smooth`}
     >
-      <body className="min-h-screen bg-background text-foreground font-body antialiased selection:bg-pure-black selection:text-pure-white">
+      <body className="min-h-screen bg-paper bg-paper-grain text-ink font-body antialiased selection:bg-paper-yellowDark selection:text-ink">
         {children}
       </body>
     </html>

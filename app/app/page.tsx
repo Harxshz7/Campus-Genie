@@ -58,7 +58,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-background flex flex-col justify-between selection:bg-pure-black selection:text-pure-white">
+    <main className="min-h-screen bg-paper bg-paper-grain flex flex-col justify-between selection:bg-paper-yellowDark selection:text-ink">
       <Header />
 
       <Hero
