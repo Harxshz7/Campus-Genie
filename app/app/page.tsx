@@ -11,12 +11,18 @@ import { GOLDEN_PATH_RESPONSE, WHATIF_5HRS_RESPONSE } from '@/lib/fixtures';
 import { GenieResponse } from '@/lib/types';
 
 export default function Home() {
-  const [currentResponse, setCurrentResponse] = useState<GenieResponse>(GOLDEN_PATH_RESPONSE);
+  const [viewState, setViewState] = useState<'landing' | 'chat'>('landing');
+  const [currentResponse, setCurrentResponse] = useState<GenieResponse | null>(null);
   const [conversationId, setConversationId] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleRunQuery = async (queryText: string, isWhatIf: boolean = false): Promise<GenieResponse> => {
     setIsLoading(true);
+    // Switch to chat view if still on landing
+    if (viewState === 'landing') {
+      setViewState('chat');
+    }
+
     try {
       const res = await fetch('/api/genie', {
         method: 'POST',
@@ -51,39 +57,44 @@ export default function Home() {
     }
   };
 
-  const handleScrollToQuery = () => {
-    const el = document.getElementById('query-interface');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
+    <div className="min-h-screen flex flex-col bg-[#fdfbf7]">
+      {/* Header with Back to Home button when in chat view */}
+      <Header
+        viewState={viewState}
+        onBackToLanding={() => {
+          setViewState('landing');
+        }}
+      />
 
-      <main className="flex-1 px-4 lg:px-8 space-y-12 pb-12">
-        {/* 1. Hero Section */}
-        <Hero onScrollToQuery={handleScrollToQuery} />
+      <main className="flex-1 px-4 lg:px-8 pb-12">
+        {/* STATE 1: LANDING PAGE VIEW */}
+        {viewState === 'landing' ? (
+          <div className="space-y-12">
+            <Hero onStartChat={() => setViewState('chat')} />
+            <StakeholderSection />
+          </div>
+        ) : (
+          /* STATE 2: FOCUSED GENIE CHAT EXPERIENCE */
+          <div className="space-y-10 max-w-4xl mx-auto pt-6">
+            <QueryInterface
+              onRunQuery={handleRunQuery}
+              response={currentResponse}
+              isLoading={isLoading}
+            />
 
-        {/* 2. Main Query Interface & Opportunity Path Cards */}
-        <QueryInterface
-          onRunQuery={handleRunQuery}
-          initialResponse={currentResponse}
-          isLoading={isLoading}
-        />
-
-        {/* 3. What-If Re-Planning Section */}
-        <WhatIfPanel
-          onRunWhatIf={(constraint) => handleRunQuery(constraint, true)}
-          isLoading={isLoading}
-        />
-
-        {/* 4. Stakeholder Value Section */}
-        <StakeholderSection />
+            {/* What-If Re-Planning Panel (Only shown AFTER first answer is generated) */}
+            {currentResponse && (
+              <WhatIfPanel
+                onRunWhatIf={(constraint) => handleRunQuery(constraint, true)}
+                isLoading={isLoading}
+              />
+            )}
+          </div>
+        )}
       </main>
 
-      {/* 5. Footer */}
+      {/* Footer */}
       <Footer />
     </div>
   );

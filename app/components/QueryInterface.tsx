@@ -1,19 +1,18 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Send, Sparkles, User, RefreshCw, Zap, HelpCircle } from 'lucide-react';
+import { Send, Sparkles, RefreshCw, Zap, Bot, HelpCircle } from 'lucide-react';
 import { GenieResponse } from '@/lib/types';
 import { OpportunityCard } from './OpportunityCard';
 
 interface QueryInterfaceProps {
   onRunQuery: (query: string, isWhatIf?: boolean) => Promise<GenieResponse>;
-  initialResponse: GenieResponse;
+  response: GenieResponse | null;
   isLoading: boolean;
 }
 
-export function QueryInterface({ onRunQuery, initialResponse, isLoading }: QueryInterfaceProps) {
+export function QueryInterface({ onRunQuery, response, isLoading }: QueryInterfaceProps) {
   const [inputQuery, setInputQuery] = useState('');
-  const [response, setResponse] = useState<GenieResponse>(initialResponse);
 
   const goldenQuestion = "I'm Arjun Mehta, a 2nd-year CSE student. I know Java and SQL. I want to become an AI Engineer. What campus opportunities should I pursue and in what order?";
 
@@ -21,14 +20,12 @@ export function QueryInterface({ onRunQuery, initialResponse, isLoading }: Query
     e.preventDefault();
     const queryToRun = inputQuery.trim() || goldenQuestion;
     const isWhatIf = queryToRun.toLowerCase().includes('what if') || queryToRun.toLowerCase().includes('hour');
-    const newRes = await onRunQuery(queryToRun, isWhatIf);
-    setResponse(newRes);
+    await onRunQuery(queryToRun, isWhatIf);
   };
 
   const handlePresetClick = async (presetText: string, isWhatIf: boolean = false) => {
     setInputQuery(presetText);
-    const newRes = await onRunQuery(presetText, isWhatIf);
-    setResponse(newRes);
+    await onRunQuery(presetText, isWhatIf);
   };
 
   return (
@@ -108,45 +105,64 @@ export function QueryInterface({ onRunQuery, initialResponse, isLoading }: Query
         </div>
       </form>
 
-      {/* Genie Response Section */}
-      <div className="space-y-6 pt-4">
-        {/* Explanation Banner */}
-        <div className="p-5 bg-white border-3 border-[#2d2d2d] wobbly-md sketch-shadow space-y-2">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-base font-heading font-bold text-[#2d2d2d]">
-              <Sparkles className="h-5 w-5 text-[#ff4d4d]" strokeWidth={2.5} />
-              <span>Genie Intelligence Reasoning Trace</span>
-              <span className={`text-[10px] font-bold px-2 py-0.5 border border-[#2d2d2d] rounded-full ${response.source === 'genie' ? 'bg-emerald-100 text-emerald-800' : 'bg-purple-100 text-purple-800'}`}>
-                {response.source === 'genie' ? '✨ Live Databricks Genie' : '🎯 Graph Intelligence Mode'}
-              </span>
-            </div>
-            {response.placementTarget && (
-              <span className="text-xs font-bold px-3 py-1 bg-[#dcfce7] border-2 border-[#2d2d2d] wobbly-pill text-emerald-800">
-                🎯 Goal Target: {response.placementTarget.company} ({response.placementTarget.role} • ₹{response.placementTarget.packageLpa} LPA)
-              </span>
-            )}
+      {/* EMPTY STATE — Shown before user asks any question */}
+      {!response && !isLoading && (
+        <div className="p-8 bg-[#fdfbf7] border-2 border-dashed border-[#2d2d2d]/40 wobbly-md text-center space-y-3">
+          <div className="h-12 w-12 bg-[#fef3c7] border-2 border-[#2d2d2d] wobbly-sm flex items-center justify-center text-[#ff4d4d] mx-auto rotate-2">
+            <Bot className="h-6 w-6" strokeWidth={2.5} />
           </div>
-          <p className="text-base font-hand text-[#2d2d2d]/90 leading-relaxed">
-            {response.explanation}
+          <h4 className="font-heading font-bold text-2xl text-[#2d2d2d]">
+            Ready to Discover Your Campus Path! 🎯
+          </h4>
+          <p className="text-sm font-hand text-[#2d2d2d]/80 max-w-md mx-auto">
+            Click the <strong className="bg-[#fef3c7] px-1">"⭐ Golden Path: AI Engineer"</strong> button above or type what you want to achieve to let Genie reason across 16 connected tables!
           </p>
         </div>
+      )}
 
-        {/* Opportunity Path Sticky Note Cards Grid */}
-        <div className="space-y-6">
-          <h3 className="font-heading font-bold text-2xl text-[#2d2d2d] flex items-center gap-2">
-            <span>🗺️ Sequenced Opportunity Path</span>
-            <span className="text-xs font-hand font-normal px-2.5 py-0.5 bg-[#fce7f3] border border-[#2d2d2d] rounded-full">
-              {response.steps.length} Steps Found
-            </span>
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {response.steps.map((step, idx) => (
-              <OpportunityCard key={idx} step={step} index={idx} />
-            ))}
+      {/* Genie Response Section — Shown only after question is asked */}
+      {response && (
+        <div className="space-y-6 pt-2">
+          {/* Explanation Banner */}
+          <div className="p-5 bg-white border-3 border-[#2d2d2d] wobbly-md sketch-shadow space-y-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-base font-heading font-bold text-[#2d2d2d]">
+                <Sparkles className="h-5 w-5 text-[#ff4d4d]" strokeWidth={2.5} />
+                <span>Genie Intelligence Reasoning Trace</span>
+                <span className={`text-[10px] font-bold px-2 py-0.5 border border-[#2d2d2d] rounded-full ${response.source === 'genie' ? 'bg-emerald-100 text-emerald-800' : 'bg-purple-100 text-purple-800'}`}>
+                  {response.source === 'genie' ? '✨ Live Databricks Genie' : '🎯 Graph Intelligence Mode'}
+                </span>
+              </div>
+              {response.placementTarget && (
+                <span className="text-xs font-bold px-3 py-1 bg-[#dcfce7] border-2 border-[#2d2d2d] wobbly-pill text-emerald-800">
+                  🎯 Goal Target: {response.placementTarget.company} ({response.placementTarget.role} • ₹{response.placementTarget.packageLpa} LPA)
+                </span>
+              )}
+            </div>
+            <p className="text-base font-hand text-[#2d2d2d]/90 leading-relaxed whitespace-pre-line">
+              {response.explanation}
+            </p>
           </div>
+
+          {/* Opportunity Path Sticky Note Cards Grid */}
+          {response.steps && response.steps.length > 0 && (
+            <div className="space-y-6">
+              <h3 className="font-heading font-bold text-2xl text-[#2d2d2d] flex items-center gap-2">
+                <span>🗺️ Sequenced Opportunity Path</span>
+                <span className="text-xs font-hand font-normal px-2.5 py-0.5 bg-[#fce7f3] border border-[#2d2d2d] rounded-full">
+                  {response.steps.length} Steps Found
+                </span>
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {response.steps.map((step, idx) => (
+                  <OpportunityCard key={idx} step={step} index={idx} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      </div>
+      )}
     </div>
   );
 }

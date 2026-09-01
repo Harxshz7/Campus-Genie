@@ -16,6 +16,7 @@ export const DEMO_STUDENT: StudentProfile = {
   ],
 };
 
+// 1. Golden Path: Arjun Mehta → AI Engineer
 export const GOLDEN_PATH_RESPONSE: GenieResponse = {
   query: "I'm Arjun Mehta, a 2nd-year CSE student. I know Java and SQL. I want to become an AI Engineer. What campus opportunities should I pursue and in what order?",
   explanation: "Arjun, based on your profile as a 2nd-year CSE student with Java and SQL background, you need to build 5 key skill gaps: Python (L3), Machine Learning (L3), TensorFlow (L2), Natural Language Processing (L2), and Model Deployment (L2). Given your 15 hrs/week budget, here is your 4-phase sequential roadmap:",
@@ -88,6 +89,143 @@ export const GOLDEN_PATH_RESPONSE: GenieResponse = {
   ],
 };
 
+// 2. Priya Sharma → Product Manager Path
+export const PRIYA_PM_RESPONSE: GenieResponse = {
+  query: "Priya Sharma is a 2nd-year CSE student who knows HTML/CSS and JavaScript. She wants to become a Product Manager. What's her best opportunity path?",
+  explanation: "Priya, based on your profile as a 2nd-year CSE student with HTML/CSS and JavaScript skills, your path to Product Management requires: Product Management (L3), UI/UX Design (L3), Data Analysis (L2), Public Speaking (L2), and Agile/Scrum (L2). Here is your tailored product roadmap:",
+  placementTarget: {
+    role: 'Associate Product Manager',
+    company: 'ProductHive',
+    packageLpa: 14.0,
+  },
+  steps: [
+    {
+      stepNumber: 1,
+      title: 'Design Thinking Lab',
+      type: 'Club',
+      whyFits: 'Teaches user research, wireframing, UI/UX design, and design sprints.',
+      prerequisites: 'None (Beginner friendly)',
+      weeklyHours: 3,
+      unlocks: 'UI/UX Design (Level 3), Product Management (Level 2), Presentation (Level 2)',
+      noteColor: 'pink',
+    },
+    {
+      stepNumber: 2,
+      title: 'UX Design Sprint (Oct 10)',
+      type: 'Event',
+      whyFits: '2-day intensive design thinking and interactive prototyping workshop.',
+      prerequisites: 'HTML/CSS (Level 2)',
+      weeklyHours: 4,
+      unlocks: 'UI/UX Design (Level 3), Product Management (Level 2)',
+      noteColor: 'yellow',
+    },
+    {
+      stepNumber: 3,
+      title: 'Entrepreneurship Cell (Meets Tuesdays)',
+      type: 'Club',
+      whyFits: 'Learn product market fit, business model canvas, pitching, and agile management.',
+      prerequisites: 'None',
+      weeklyHours: 3,
+      unlocks: 'Product Management (Level 3), Public Speaking (Level 3), Leadership (Level 2)',
+      noteColor: 'cyan',
+    },
+    {
+      stepNumber: 4,
+      title: 'Startup Weekend Hackathon (Nov 8)',
+      type: 'Hackathon',
+      whyFits: '54-hour hackathon to take a product idea from zero to prototype & investor pitch.',
+      prerequisites: 'HTML/CSS (Level 2), JS (Level 2)',
+      weeklyHours: 4,
+      unlocks: 'Product Management (Level 3), Pitching (Level 3), Teamwork (Level 3)',
+      noteColor: 'yellow',
+    },
+    {
+      stepNumber: 5,
+      title: 'AI for Product Analytics Research',
+      type: 'Research',
+      whyFits: 'Under Dr. Rekha Menon (MBA Dept). Analyze user behavior & product metrics with ML.',
+      prerequisites: 'Python (Level 2), Data Analysis (Level 2)',
+      weeklyHours: 5,
+      unlocks: 'Product Management (Level 3), Machine Learning (Level 2), Data Visualization (Level 3)',
+      noteColor: 'mint',
+    },
+    {
+      stepNumber: 6,
+      title: 'ProductHive Associate Product Manager Placement',
+      type: 'Placement',
+      whyFits: 'APM role at ₹14 LPA. Product management, analytics & design skills 100% matched!',
+      prerequisites: 'PM (L3), Data Analysis (L2), UI/UX (L2), Speaking (L2)',
+      weeklyHours: 0,
+      unlocks: 'Full-time Associate Product Manager Offer (₹14 LPA)',
+      noteColor: 'mint',
+    },
+  ],
+};
+
+// 3. Data Scientist Path (Rahul / General Data Science)
+export const DATA_SCIENTIST_RESPONSE: GenieResponse = {
+  query: "What if Arjun wanted to become a Data Scientist instead of an AI Engineer?",
+  explanation: "Switching career target to Data Scientist (DataMinds Analytics • ₹15 LPA). This target prioritizes: Statistics (L3), Data Analysis (L3), Python (L3), Machine Learning (L2), and Data Visualization (L2). Here is your re-planned Data Science path:",
+  placementTarget: {
+    role: 'Data Scientist',
+    company: 'DataMinds Analytics',
+    packageLpa: 15.0,
+  },
+  steps: [
+    {
+      stepNumber: 1,
+      title: 'Data Analytics Club (Meets Thursdays)',
+      type: 'Club',
+      whyFits: 'Uses your existing SQL skills to build statistical analysis & visualization in Python.',
+      prerequisites: 'SQL (Level 1)',
+      weeklyHours: 3,
+      unlocks: 'Data Analysis (Level 3), Data Visualization (Level 3), Python (Level 2)',
+      noteColor: 'cyan',
+    },
+    {
+      stepNumber: 2,
+      title: 'Python for Data Science Bootcamp (Sep 20)',
+      type: 'Event',
+      whyFits: '3-day intensive bootcamp covering Pandas, NumPy, Scikit-Learn & Matplotlib.',
+      prerequisites: 'None',
+      weeklyHours: 8,
+      unlocks: 'Python (Level 3), Data Analysis (Level 2), Scikit-Learn (Level 2)',
+      noteColor: 'pink',
+    },
+    {
+      stepNumber: 3,
+      title: 'Predictive Student Outcomes Research',
+      type: 'Research',
+      whyFits: 'Under Dr. Priya Nair (MATH Dept). Build statistical models for academic analytics.',
+      prerequisites: 'Python (Level 2), Statistics (Level 3)',
+      weeklyHours: 6,
+      unlocks: 'Machine Learning (Level 3), Scikit-Learn (Level 3), Research Methods (Level 3)',
+      noteColor: 'mint',
+    },
+    {
+      stepNumber: 4,
+      title: 'Data Engineering Challenge (Nov 30)',
+      type: 'Hackathon',
+      whyFits: '36-hour challenge building production data pipelines & analytical dashboards.',
+      prerequisites: 'Python (Level 2), SQL (Level 2)',
+      weeklyHours: 4,
+      unlocks: 'Data Engineering (Level 3), ETL (Level 2), Databricks (Level 2)',
+      noteColor: 'yellow',
+    },
+    {
+      stepNumber: 5,
+      title: 'DataMinds Analytics Data Scientist Placement',
+      type: 'Placement',
+      whyFits: 'Data Scientist role at ₹15 LPA. All 5 statistical & analytical skill gaps satisfied!',
+      prerequisites: 'Python (L3), ML (L2), Statistics (L3), Data Analysis (L3)',
+      weeklyHours: 0,
+      unlocks: 'Full-time Data Scientist Job Offer (₹15 LPA)',
+      noteColor: 'mint',
+    },
+  ],
+};
+
+// 4. What-If 5 Hours Constraint Path
 export const WHATIF_5HRS_RESPONSE: GenieResponse = {
   query: 'What if Arjun only has 5 hours per week available?',
   isWhatIf: true,
