@@ -29,6 +29,8 @@ export interface GenieResponse {
   steps: OpportunityStep[];
   isWhatIf?: boolean;
   whatIfConstraint?: string;
+  conversationId?: string;
+  source?: 'genie' | 'fixture';
   placementTarget?: {
     role: string;
     company: string;

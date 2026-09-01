@@ -116,6 +116,9 @@ export function QueryInterface({ onRunQuery, initialResponse, isLoading }: Query
             <div className="flex items-center gap-2 text-base font-heading font-bold text-[#2d2d2d]">
               <Sparkles className="h-5 w-5 text-[#ff4d4d]" strokeWidth={2.5} />
               <span>Genie Intelligence Reasoning Trace</span>
+              <span className={`text-[10px] font-bold px-2 py-0.5 border border-[#2d2d2d] rounded-full ${response.source === 'genie' ? 'bg-emerald-100 text-emerald-800' : 'bg-purple-100 text-purple-800'}`}>
+                {response.source === 'genie' ? '✨ Live Databricks Genie' : '🎯 Graph Intelligence Mode'}
+              </span>
             </div>
             {response.placementTarget && (
               <span className="text-xs font-bold px-3 py-1 bg-[#dcfce7] border-2 border-[#2d2d2d] wobbly-pill text-emerald-800">

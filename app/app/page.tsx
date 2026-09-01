@@ -12,6 +12,7 @@ import { GenieResponse } from '@/lib/types';
 
 export default function Home() {
   const [currentResponse, setCurrentResponse] = useState<GenieResponse>(GOLDEN_PATH_RESPONSE);
+  const [conversationId, setConversationId] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleRunQuery = async (queryText: string, isWhatIf: boolean = false): Promise<GenieResponse> => {
@@ -20,16 +21,23 @@ export default function Home() {
       const res = await fetch('/api/genie', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: queryText }),
+        body: JSON.stringify({
+          message: queryText,
+          conversationId: conversationId,
+        }),
       });
 
-      const data = await res.json();
+      const data: GenieResponse = await res.json();
+
+      if (data.conversationId) {
+        setConversationId(data.conversationId);
+      }
+
       if (data && data.steps) {
         setCurrentResponse(data);
         return data;
       }
 
-      // Fallback logic
       const fallback = isWhatIf ? WHATIF_5HRS_RESPONSE : GOLDEN_PATH_RESPONSE;
       setCurrentResponse(fallback);
       return fallback;
