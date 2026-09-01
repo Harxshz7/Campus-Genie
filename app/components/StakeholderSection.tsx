@@ -32,43 +32,43 @@ export function StakeholderSection() {
   ];
 
   return (
-    <section className="max-w-4xl mx-auto py-10 space-y-6">
-      <div className="text-center space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white border-2 border-[#2d2d2d] wobbly-pill sketch-shadow-sm text-xs font-bold">
+    <section className="max-w-7xl mx-auto py-12 px-4 sm:px-6 space-y-8">
+      <div className="text-center space-y-3">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border-2 border-[#2d2d2d] wobbly-pill sketch-shadow-sm text-xs font-bold">
           <Users className="h-4 w-4 text-[#2d5da1]" strokeWidth={2.5} />
-          <span>Secondary Stakeholder Value</span>
+          <span>Cross-Functional Intelligence</span>
         </div>
-        <h2 className="font-heading font-bold text-3xl text-[#2d2d2d]">
+        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#2d2d2d]">
           One Graph. Every Campus Stakeholder. 🏛️
         </h2>
-        <p className="text-sm font-hand text-[#2d2d2d]/80 max-w-xl mx-auto">
-          While the student is primary, Databricks Genie unlocks cross-functional intelligence for faculty, placement officers, and student leaders.
+        <p className="text-base sm:text-lg font-hand text-[#2d2d2d]/80 max-w-2xl mx-auto">
+          While the student experience is primary, Databricks Genie unlocks cross-functional intelligence for faculty, placement officers, and student leaders.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {stakeholders.map((s, idx) => {
           const Icon = s.icon;
           return (
             <div
               key={idx}
-              className={`relative p-5 border-2 border-[#2d2d2d] wobbly-md sketch-shadow space-y-3 ${s.color}`}
+              className={`relative p-7 border-2 border-[#2d2d2d] wobbly-md sketch-shadow space-y-4 ${s.color}`}
             >
               {/* Tape Accent */}
-              <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-4 bg-white/80 border border-[#2d2d2d]/30 ${s.tapeRotate}`} />
+              <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-5 bg-white/90 border border-[#2d2d2d]/30 ${s.tapeRotate}`} />
 
-              <div className="flex items-center gap-2">
-                <div className="h-8 w-8 bg-white border-2 border-[#2d2d2d] rounded-lg flex items-center justify-center text-[#2d2d2d]">
-                  <Icon className="h-4 w-4" strokeWidth={2.5} />
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 bg-white border-2 border-[#2d2d2d] rounded-xl flex items-center justify-center text-[#2d2d2d] shrink-0">
+                  <Icon className="h-5 w-5" strokeWidth={2.5} />
                 </div>
-                <h4 className="font-heading font-bold text-lg text-[#2d2d2d]">{s.role}</h4>
+                <h4 className="font-heading font-bold text-xl text-[#2d2d2d]">{s.role}</h4>
               </div>
 
-              <p className="text-xs font-hand italic text-[#2d2d2d]/90 bg-white/60 p-2 rounded border border-[#2d2d2d]/20">
+              <p className="text-sm font-hand italic text-[#2d2d2d]/90 bg-white/70 p-3 rounded-lg border border-[#2d2d2d]/20 leading-relaxed">
                 {s.quote}
               </p>
 
-              <p className="text-xs font-hand text-[#2d2d2d]/80">
+              <p className="text-sm font-hand text-[#2d2d2d]/85 leading-relaxed">
                 {s.impact}
               </p>
             </div>

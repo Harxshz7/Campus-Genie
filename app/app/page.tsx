@@ -39,7 +39,7 @@ export default function Home() {
         setConversationId(data.conversationId);
       }
 
-      if (data && data.steps) {
+      if (data && (data.explanation || data.steps)) {
         setCurrentResponse(data);
         return data;
       }
@@ -67,16 +67,16 @@ export default function Home() {
         }}
       />
 
-      <main className="flex-1 px-4 lg:px-8 pb-12">
+      <main className="flex-1 pb-16">
         {/* STATE 1: LANDING PAGE VIEW */}
         {viewState === 'landing' ? (
-          <div className="space-y-12">
+          <div className="space-y-16">
             <Hero onStartChat={() => setViewState('chat')} />
             <StakeholderSection />
           </div>
         ) : (
-          /* STATE 2: FOCUSED GENIE CHAT EXPERIENCE */
-          <div className="space-y-10 max-w-4xl mx-auto pt-6">
+          /* STATE 2: FOCUSED FULL-WIDTH GENIE EXPERIENCE */
+          <div className="space-y-12 max-w-7xl mx-auto pt-8">
             <QueryInterface
               onRunQuery={handleRunQuery}
               response={currentResponse}
@@ -84,7 +84,7 @@ export default function Home() {
             />
 
             {/* What-If Re-Planning Panel (Only shown AFTER first answer is generated) */}
-            {currentResponse && (
+            {currentResponse && !isLoading && (
               <WhatIfPanel
                 onRunWhatIf={(constraint) => handleRunQuery(constraint, true)}
                 isLoading={isLoading}
