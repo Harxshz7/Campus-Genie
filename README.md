@@ -1,259 +1,266 @@
 <p align="center">
-  <h1 align="center">🎯 Campus Opportunity Radar</h1>
-  <p align="center"><em>Turn fragmented campus data into personalized opportunity paths — powered by Databricks Genie</em></p>
+  <h1 align="center">🎯 Campus Genie — Hand-Drawn Opportunity Radar</h1>
+  <p align="center"><strong>Track A: Real-World Campus Problem Solver | Theme: Genie-Powered Campus Intelligence</strong></p>
+  <p align="center"><em>Turning fragmented university silos into personalized, data-backed opportunity roadmaps — powered by Databricks Genie & Unity Catalog.</em></p>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Databricks-Genie%20Space-FF3621?style=for-the-badge&logo=databricks&logoColor=white" />
-  <img src="https://img.shields.io/badge/Data-Unity%20Catalog-00A3E0?style=for-the-badge&logo=databricks&logoColor=white" />
-  <img src="https://img.shields.io/badge/Status-Demo%20Ready-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Databricks-Genie%20REST%20API-FF3621?style=for-the-badge&logo=databricks&logoColor=white" />
+  <img src="https://img.shields.io/badge/Databricks-Unity%20Catalog%20(16%20Tables)-00A3E0?style=for-the-badge&logo=databricks&logoColor=white" />
+  <img src="https://img.shields.io/badge/Next.js-16%20(Turbopack)-000000?style=for-the-badge&logo=next.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/UI-Sketchy%20Wobbly%20Design-FFB800?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-100%25%20Live%20%26%20Verified-brightgreen?style=for-the-badge" />
 </p>
 
 ---
 
-## 🔥 The Problem
+## 📌 Executive Summary
 
-> **"I know I want to become an AI Engineer, but I have no idea what to do next on campus."**
+University campuses are filled with incredible opportunities — top-tier placements, cutting-edge faculty research, high-stakes hackathons, active student clubs, and hands-on bootcamps. However, **students fail to connect the dots** because campus data lives in 6+ disconnected information silos.
 
-Campus information is **fragmented** across dozens of disconnected silos:
-
-| Silo | What a student sees |
-|------|-------------------|
-| Course catalog | A list of courses — no link to career goals |
-| Club listings | Names and meeting times — no skill mapping |
-| Event calendar | Dates — no relevance scoring |
-| Placement portal | Job descriptions — no preparation path |
-| Research board | Faculty projects — no prerequisite clarity |
-| Hackathon announcements | Themes — no team/skill matching |
-
-Students can find **individual pieces** but cannot see **how they connect to their goals**. The result: missed opportunities, wasted semesters, and the nagging feeling that "everyone else knows something I don't."
+**Campus Genie** solves this real-world problem by modeling university data as a unified **16-Table Opportunity Graph** in Databricks Unity Catalog. At its core sits a **Databricks Genie Agent** that performs real-time **multi-hop reasoning** over student skill gaps, prerequisites, time constraints, and career goals to generate personalized, sequenced opportunity roadmaps.
 
 ---
 
-## 💡 The Insight
+## 🎯 Track A & Jury Alignment
 
-Every campus entity — a project, a club, an event, a research opportunity, a placement role — is connected through **skills**. These connections form an **Opportunity Graph** where:
-
-- A **Backend Development** project teaches `Java`, `REST APIs`, `SQL`
-- The **AI Club** requires `Python` and teaches `Machine Learning`, `NLP`
-- An **Applied AI Workshop** deepens `TensorFlow`, `Model Deployment`
-- A **Research Assistantship** under Prof. Kumar needs `ML` + `Statistics`
-- A **Hackathon** rewards `End-to-End ML`, `Teamwork`, `Presentation`
-- An **AI Engineer placement** at TechCorp requires exactly those accumulated skills
-
-**These aren't random connections. They form a learnable, traversable path.**
+| Judging Criteria | How Campus Genie Solves It |
+| :--- | :--- |
+| **Real-World Campus Problem** | Eliminates campus silo fragmentation for students, placement cells, faculty supervisors, and club leads. |
+| **Genie Core Integration** | Live Databricks Genie REST API (`/start-conversation`, `/messages`, and polling loop) executes multi-table SQL queries live on Databricks. |
+| **Complete User Journey** | Natural language prompt ➔ Multi-hop Databricks Genie SQL execution ➔ Clean natural language answer + SQL code display ➔ Sequenced 6-step opportunity cards ➔ Interactive "What-If?" re-planning engine. |
+| **Data Architecture** | 16 interconnected Unity Catalog tables covering 100 students, 100 skills, 25 projects, 15 clubs, 30 events, 15 faculty, 20 research roles, 15 hackathons, and 20 placements. |
+| **User Experience** | Full-width premium hand-drawn wobbly aesthetic (`max-w-7xl`) with razor-sharp sans-serif typography for 100% visual clarity. |
 
 ---
 
-## 🚀 The Solution: Campus Opportunity Radar
+## 🚨 The Campus Silo Trap
 
-Campus Opportunity Radar turns disconnected campus datasets into an **Opportunity Graph** and uses **Databricks Genie** as the intelligence layer to:
+Students constantly ask:
+> *"I know I want to become an AI Engineer at ₹18 LPA, but what specific campus opportunities should I pursue, in what order, given my 15 hrs/week schedule?"*
 
-### 1. 🔍 Understand the Student
-A student asks a natural-language question:
-> *"I'm a 2nd-year CSE student who knows Java and SQL. I want to become an AI Engineer. What should I do?"*
-
-### 2. 🧠 Reason Across the Graph (Multi-Hop)
-Genie doesn't just search — it **reasons**:
-- Current skills → skill gaps for goal → which campus opportunities fill each gap → optimal sequencing → time constraints
-
-### 3. 📋 Return Personalized Opportunity Cards
-Each recommendation comes with:
-- **Why** this opportunity (skill gap it fills)
-- **Prerequisites** (what you need first)
-- **Time cost** (hours/week)
-- **What it unlocks** (next opportunities it enables)
-
-### 4. 🗺️ Build an Adaptive Opportunity Path
-An 8–12 week sequenced plan:
-```
-Week 1-2: Join Backend Project → solidify Java, learn REST APIs
-Week 3-4: Join AI Club → start Python, intro to ML concepts
-Week 5-6: Attend Applied AI Workshop → hands-on TensorFlow
-Week 7-8: Apply for Prof. Kumar's NLP Research → real-world ML
-Week 9-10: Enter DataHack Hackathon → end-to-end ML project
-Week 11-12: Apply to TechCorp AI Engineer role → you're ready
-```
-
-### 5. 🔄 Support "What If?" Re-Planning
-> *"What if I only have 5 hours per week?"*
-> *"What if I already know Python?"*
-> *"What if I want Data Science instead of AI Engineering?"*
-
-Genie **re-reasons** and returns an adjusted path instantly.
-
----
-
-## 🏗️ Architecture
+Traditional university portals fail because they present isolated data:
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                   Student Question                   │
-│  "I know Java+SQL, want to be AI Engineer, help me" │
-└──────────────────────┬──────────────────────────────┘
-                       │
-                       ▼
-┌─────────────────────────────────────────────────────┐
-│              Databricks Genie Space                  │
-│  ┌─────────────────────────────────────────────┐    │
-│  │         System Instructions                  │    │
-│  │  • Multi-hop reasoning across tables         │    │
-│  │  • Explain every recommendation              │    │
-│  │  • Support "What if?" constraints            │    │
-│  │  • Return structured opportunity paths       │    │
-│  └─────────────────────────────────────────────┘    │
-│                       │                              │
-│                       ▼                              │
-│  ┌─────────────────────────────────────────────┐    │
-│  │         Unity Catalog Tables                 │    │
-│  │                                              │    │
-│  │  students ──→ student_skills ←── skills      │    │
-│  │     │              │                │         │    │
-│  │     │    projects ──→ project_skills │        │    │
-│  │     │    clubs ────→ club_skills     │        │    │
-│  │     │    events ───→ event_skills    │        │    │
-│  │     │    research ─→ research_skills │        │    │
-│  │     │    hackathons → hackathon_skills│       │    │
-│  │     │    placements → placement_skills│       │    │
-│  │     │              │                │         │    │
-│  │     └──── OPPORTUNITY GRAPH ────────┘        │    │
-│  └─────────────────────────────────────────────┘    │
-│                       │                              │
-│                       ▼                              │
-│            Personalized Opportunity Path              │
-└─────────────────────────────────────────────────────┘
+┌─────────────────┐   ┌─────────────────┐   ┌─────────────────┐
+│ Placement Cell  │   │ Research Board  │   │  Event Calendar │
+│ Job requirements│   │ Faculty topics  │   │ Workshop dates  │
+└────────┬────────┘   └────────┬────────┘   └────────┬────────┘
+         │                     │                     │
+         └─────────────┬───────┴─────────────┬───────┘
+                       ▼                     ▼
+              [DISCONNECTED DATA SILOS — NO SKILL MAPPING]
 ```
 
-> See [docs/architecture.md](docs/architecture.md) for the full technical architecture.
+### The Solution: Multi-Hop Opportunity Graph
+
+**Campus Genie** connects every entity through a shared **Skill Taxonomy (`skills.csv`)**:
+
+```
+[Student: Arjun Mehta] (Java L3, SQL L3)
+       │
+       ▼ (Teaches Python & REST)
+[Project: Campus Backend API]
+       │
+       ▼ (Requires Python, Teaches ML)
+[Club: AI/ML Club]
+       │
+       ▼ (Teaches TensorFlow)
+[Event: Applied AI Workshop]
+       │
+       ▼ (Requires ML & Python, Teaches NLP)
+[Research: NLP for Indian Languages] (Dr. Rajesh Kumar)
+       │
+       ▼ (Requires ML & Teamwork)
+[Hackathon: DataHack 2026]
+       │
+       ▼ (Requires Python, ML, TensorFlow, NLP)
+[Target Placement: TechCorp AI Engineer • ₹18 LPA]
+```
 
 ---
 
-## 📊 Data Model
+## 🗄️ Databricks Unity Catalog Architecture (16 Tables)
 
-The Opportunity Graph is built from **14 intentionally connected tables**:
+The application is backed by **16 relational tables** hosted in Databricks Unity Catalog under the catalog `workspace.campus_genie`:
 
-| Entity | Description | Key Relationships |
-|--------|-------------|-------------------|
-| `students` | Student profiles with year, department, goals | → `student_skills` |
-| `skills` | Skill taxonomy (technical + soft) | Central node connecting everything |
-| `student_skills` | What each student knows + proficiency level | students ↔ skills |
-| `projects` | Campus projects with difficulty, time cost | → `project_skills` (teaches/requires) |
-| `clubs` | Student clubs with focus areas | → `club_skills` |
-| `events` | Workshops, seminars, bootcamps | → `event_skills` |
-| `faculty` | Faculty profiles with research areas | → `research` |
-| `research` | Research opportunities under faculty | → `research_skills` |
-| `hackathons` | Hackathon events with themes | → `hackathon_skills` |
-| `placements` | Company placement roles | → `placement_skills` |
+```
+               ┌──────────────────┐
+               │     students     │
+               └────────┬─────────┘
+                        │
+               ┌────────┴─────────┐
+               │  student_skills  │
+               └────────┬─────────┘
+                        │
+                        ▼
+               ┌──────────────────┐
+        ┌─────►│      skills      │◄─────┐
+        │      └────────┬─────────┘      │
+        │               │                │
+┌───────┴────────┐      │       ┌────────┴───────┐
+│ project_skills │      │       │  club_skills   │
+├────────────────┤      │       ├────────────────┤
+│    projects    │      │       │     clubs      │
+└────────────────┘      │       └────────────────┘
+                        │
+┌────────────────┐      │       ┌────────────────┐
+│  event_skills  │      │       │research_skills │
+├────────────────┤      │       ├────────────────┤
+│     events     │      │       │ research / fac │
+└────────────────┘      │       └────────────────┘
+                        │
+┌────────────────┐      │       ┌────────────────┐
+│hackathon_skills│      │       │placement_skills│
+├────────────────┤      │       ├────────────────┤
+│   hackathons   │      │       │   placements   │
+└────────────────┘      └───────└────────────────┘
+```
 
-> See [docs/data-model.md](docs/data-model.md) for the full schema and relationship map.
+### Table Breakdown
+
+| Table Name | Records | Description | Primary Key / Foreign Keys |
+| :--- | :---: | :--- | :--- |
+| `students` | 100 | Student profiles, year, department, GPA, career goal, weekly budget | `student_id` |
+| `skills` | 100 | Master skill taxonomy, category, difficulty levels 1-5 | `skill_id` |
+| `student_skills` | 400 | Student skill proficiency levels (Level 1-5) | `student_id`, `skill_id` |
+| `projects` | 25 | Campus projects, difficulty, weekly hours, duration | `project_id` |
+| `project_skills` | 50 | Skills required or taught by projects | `project_id`, `skill_id` |
+| `clubs` | 15 | Active student clubs, focus area, meeting schedules | `club_id` |
+| `club_skills` | 30 | Skills required or taught by clubs | `club_id`, `skill_id` |
+| `events` | 30 | Bootcamps, workshops, seminars, capacity, dates | `event_id` |
+| `event_skills` | 60 | Skills required or taught by events | `event_id`, `skill_id` |
+| `faculty` | 15 | Faculty supervisors, department, research area | `faculty_id` |
+| `research` | 20 | Research assistantships, min year, open positions, stipend | `research_id`, `faculty_id` |
+| `research_skills` | 40 | Skills required or taught by research roles | `research_id`, `skill_id` |
+| `hackathons` | 15 | Competitive hackathons, themes, dates, prize pools | `hackathon_id` |
+| `hackathon_skills` | 30 | Skills required or taught by hackathons | `hackathon_id`, `skill_id` |
+| `placements` | 20 | Placement opportunities, package LPA, application deadlines | `placement_id` |
+| `placement_skills` | 40 | Skill requirements & min proficiency levels for placements | `placement_id`, `skill_id` |
 
 ---
 
-## 🎬 Demo in 90 Seconds
+## ⚡ Databricks Genie API Flow & Technical Stack
 
-### The Magic Moment
-1. **Open Genie Space** — show the clean interface
-2. **Ask the golden question:**
-   > *"I'm Arjun, a 2nd-year CSE student. I know Java and SQL but want to become an AI Engineer. What opportunities should I pursue and in what order?"*
-3. **Watch Genie reason** across 8+ tables and return a sequenced path
-4. **Show the "What if?":**
-   > *"What if I only have 5 hours per week?"*
-5. **Genie re-plans** — drops time-heavy options, suggests alternatives
-6. **Close with the insight:** *"Every student gets a different path because every student starts from a different place."*
-
-> See [docs/demo-script.md](docs/demo-script.md) for the full demo playbook.
+```
+┌────────────────────────────────────────────────────────┐
+│                   Next.js 16 Frontend                  │
+│   QueryInterface.tsx ➔ POST /api/genie                 │
+└──────────────────────────┬─────────────────────────────┘
+                           │
+                           ▼
+┌────────────────────────────────────────────────────────┐
+│               Next.js Route (app/api/genie)            │
+│  1. parseProfileAndGoal() & sanitize JSON              │
+│  2. POST /api/2.0/genie/spaces/{id}/start-conversation │
+│  3. Poll GET /conversations/{id}/messages/{msg_id}     │
+│     (Max 35 retries @ 1.5s interval until COMPLETED)   │
+└──────────────────────────┬─────────────────────────────┘
+                           │
+                           ▼
+┌────────────────────────────────────────────────────────┐
+│                 Databricks Genie Agent                 │
+│  • Executes multi-table SQL queries on Unity Catalog   │
+│  • Generates data answer + SQL code + thoughts         │
+└──────────────────────────┬─────────────────────────────┘
+                           │
+                           ▼
+┌────────────────────────────────────────────────────────┐
+│               Response Processing Layer                │
+│  • parseGenieResponsePayload():                        │
+│    - explanation: Clean natural language answer text   │
+│    - sqlQuery: Databricks SQL code                     │
+│    - steps: Opportunity step cards with tech stack     │
+└────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 🚀 Quick Start
+## 🎨 UI & User Experience Highlights
+
+- **Full-Width Modern Layout (`max-w-7xl`)**: Spacious container padding, balanced grid gaps, and generous breathing room.
+- **Hand-Drawn Sketch Aesthetic**: Custom wobbly border radiuses (`wobbly-md`, `wobbly-pill`), offset sketch shadows (`sketch-shadow`), taped note headers, and thumbtack accents.
+- **Razor-Sharp Typography**: System `font-sans` subpixel antialiasing with solid `#111111` high-contrast text for 100% crisp legibility across all metadata fields.
+- **Real Genie Badge**: Prominent glowing green status badge **`✨ Real Genie (Databricks Live)`** when live Databricks answers are returned.
+- **Databricks SQL Viewer**: Dedicated dark SQL code box (`bg-[#1e1e1e]`, syntax green font) rendering the exact query generated by Genie.
+- **"What-If?" Re-Planning Engine**: Interactive constraint buttons (`⏱️ Only 5 Hours/Week`, `⚡ Already Knows Python`, `🎯 Switch Goal to Data Scientist`) with animated scribble strikethroughs.
+
+---
+
+## 🧪 Verified Demo Queries
+
+### 1. Golden AI Engineer Path
+> **Query**: `"I'm Arjun Mehta, a 2nd-year CSE student. I know Java and SQL. I want to become an AI Engineer. What campus opportunities should I pursue and in what order?"`  
+> **Databricks Result**: Returns live SQL query joining `students`, `skills`, `placements`, `projects`, `clubs`, `events`, `research`, and `hackathons`, recommending a 6-step sequential path to TechCorp India (₹18.0 LPA).
+
+### 2. AI/ML Hackathons Query
+> **Query**: `"Which hackathons have AI or ML themes, and what skills are required to participate?"`  
+> **Databricks Result**: Generates `SELECT h.title, h.date, s.skill_name FROM hackathons... WHERE theme ILIKE '%AI%' OR theme ILIKE '%ML%'` and displays hackathon cards for DataHack 2026, HealthTech Hackathon, and Startup Weekend.
+
+### 3. Product Manager Path (Priya Sharma)
+> **Query**: `"Priya Sharma is a 2nd-year CSE student who knows HTML/CSS and JavaScript. She wants to become a Product Manager. What is her best opportunity path?"`  
+> **Databricks Result**: Generates multi-table product management query, returning Associate Product Manager at ProductHive (₹14.0 LPA).
+
+### 4. What-If Time Constraint
+> **Query**: `"What if Arjun only has 5 hours per week available?"`  
+> **Databricks Result**: Re-evaluates weekly hours budget, replacing high-commitment research with low-cost workshops and hackathons.
+
+---
+
+## 💻 Local Setup & Installation
 
 ### Prerequisites
-- Databricks Free Edition account
-- Python 3.9+
+- Node.js 18.x or higher
+- Python 3.9+ (for synthetic data scripts)
+- Databricks Workspace (Free Edition or standard workspace) with Unity Catalog enabled
 
-### Step 1: Generate Synthetic Data
+### Step 1: Clone Repository & Install Dependencies
 ```bash
-cd campus-opportunity-radar
-pip install faker pandas numpy
-python scripts/generate_synthetic_data.py
+git clone https://github.com/chethanhrx/Campus-Genie.git
+cd Campus-Genie/app
+npm install
 ```
-This creates realistic, relationship-rich CSVs in `data/raw/`.
 
-### Step 2: Validate Data Quality
+### Step 2: Configure Environment Variables
+Create `/app/.env.local` (and `/app/.env`):
+```env
+DATABRICKS_HOST=https://<your-databricks-instance>.cloud.databricks.com
+DATABRICKS_TOKEN=<your-databricks-personal-access-token>
+GENIE_SPACE_ID=<your-genie-space-id>
+```
+
+### Step 3: Run Synthetic Data Generation & Verification (Optional)
 ```bash
-python scripts/validate_data.py
+cd ..
+python3 scripts/generate_synthetic_data.py
+python3 scripts/validate_data.py
 ```
-Confirms the golden multi-hop paths exist and relationship density is sufficient.
 
-### Step 3: Load into Databricks
-Follow the step-by-step guide in [docs/genie-setup.md](docs/genie-setup.md) to:
-1. Upload CSVs to Unity Catalog
-2. Create the Genie Space
-3. Configure system instructions
-4. Test with sample questions
-
-### Step 4: Run the Student-Facing Web App (Optional Frontend)
+### Step 4: Launch Next.js Development Server
 ```bash
 cd app
-npm install
 npm run dev
 ```
-Open `http://localhost:3000` to interact with Campus Genie through a student-facing interface with pre-loaded prompts and What-If scenario chips!
 
-### Step 5: Demo!
-Use the questions in [genie/sample_questions.md](genie/sample_questions.md) to showcase the full capability.
+Open **[http://localhost:3000](http://localhost:3000)** in your browser!
 
 ---
 
-## 📁 Project Structure
+## 🚀 Scalability & Future Roadmap
 
 ```
-campus-opportunity-radar/
-├── README.md                          # You are here
-├── docs/
-│   ├── architecture.md                # Technical architecture deep-dive
-│   ├── data-model.md                  # Entity-relationship model + design decisions
-│   ├── genie-setup.md                 # Step-by-step Databricks + Genie setup
-│   ├── demo-script.md                 # 90-second pitch + demo choreography
-│   └── jury-notes.md                  # How this project hits every judging criterion
-├── data/
-│   ├── raw/                           # Generated CSV files
-│   ├── processed/                     # Transformed / enriched data
-│   └── schemas/
-│       └── schema.sql                 # DDL for all tables
-├── scripts/
-│   ├── generate_synthetic_data.py     # Relationship-rich synthetic data generator
-│   ├── load_to_databricks.py          # Loading helper / instructions
-│   └── validate_data.py              # Data quality + relationship density checks
-├── genie/
-│   ├── genie_instructions.md          # System prompt for Genie Space
-│   ├── sample_questions.md            # 12–15 golden demo questions
-│   └── expected_answers.md            # Expected reasoning traces
-├── app/                               # Optional lightweight frontend
-└── notebooks/
-    └── 01_data_exploration.ipynb      # Data exploration notebook
+  v1.0 (Current)              v2.0 (Multi-Campus)             v3.0 (City Ecosystem)
+┌──────────────────────┐    ┌──────────────────────┐    ┌──────────────────────┐
+│ Single University    │ ➔ │ Multi-University     │ ➔ │ City-Wide Internship │
+│ 16 Catalog Tables    │    │ Federated Catalogs   │    │ Industry & Alumni    │
+│ Databricks Genie API │    │ Cross-Campus Graph   │    │ Mentorship Network   │
+└──────────────────────┘    └──────────────────────┘    └──────────────────────┘
 ```
 
----
-
-## 🌍 Scalability Story
-
-| Phase | Scope | What Changes |
-|-------|-------|-------------|
-| **v1** (now) | Single campus | Core opportunity graph |
-| **v2** | Multi-campus | Federated data, cross-campus opportunities |
-| **v3** | City layer | Industry partnerships, city-wide internships, alumni network |
-
-The Opportunity Graph model is **campus-agnostic**. The same schema works for any university — only the data changes.
-
----
-
-## 👥 Team
-
-Built for the Databricks Genie Hackathon.
+The Opportunity Graph architecture is **university-agnostic**. Any institution can plug its CSVs/data warehouses into Unity Catalog and instantly deploy a personalized Databricks Genie Opportunity Radar for its students!
 
 ---
 
 ## 📄 License
 
-MIT License — see [LICENSE](LICENSE) for details.
+Distributed under the **MIT License**. Built for the Databricks Genie Hackathon 2026.
