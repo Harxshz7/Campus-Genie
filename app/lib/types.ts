@@ -43,6 +43,7 @@ export interface StudentProfileBadge {
 export interface GenieResponse {
   query: string;
   explanation: string;
+  sqlQuery?: string;
   steps: OpportunityStep[];
   isWhatIf?: boolean;
   whatIfConstraint?: string;

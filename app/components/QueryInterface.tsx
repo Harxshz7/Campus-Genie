@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Send, Sparkles, RefreshCw, Zap, Bot, Database } from 'lucide-react';
+import { Send, Sparkles, RefreshCw, Zap, Bot, Database, Code2 } from 'lucide-react';
 import { GenieResponse } from '@/lib/types';
 import { OpportunityCard } from './OpportunityCard';
 
@@ -103,6 +103,14 @@ export function QueryInterface({ onRunQuery, response, isLoading }: QueryInterfa
 
           <button
             type="button"
+            onClick={() => handlePresetClick("Which hackathons have AI or ML themes, and what skills are required to participate?", false)}
+            className="px-3.5 py-1.5 bg-[#e0f2fe] hover:bg-[#bae6fd] text-[#2d5da1] border-2 border-[#2d2d2d] wobbly-pill transition-colors cursor-pointer sketch-shadow-sm"
+          >
+            🏆 AI/ML Hackathons
+          </button>
+
+          <button
+            type="button"
             onClick={() => handlePresetClick("What if Arjun wanted to become a Data Scientist instead of AI Engineer?", false)}
             className="px-3.5 py-1.5 bg-[#dcfce7] hover:bg-[#bbf7d0] text-emerald-900 border-2 border-[#2d2d2d] wobbly-pill transition-colors cursor-pointer sketch-shadow-sm"
           >
@@ -161,12 +169,12 @@ export function QueryInterface({ onRunQuery, response, isLoading }: QueryInterfa
       {response && !isLoading && (
         <div className="space-y-8 pt-4 border-t-3 border-[#2d2d2d]/20">
           {/* Explanation Banner */}
-          <div className="p-6 md:p-8 bg-white border-3 border-[#2d2d2d] wobbly-md sketch-shadow space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b-2 border-[#2d2d2d]/10">
+          <div className="p-6 md:p-8 bg-white border-3 border-[#2d2d2d] wobbly-md sketch-shadow space-y-5">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b-2 border-[#2d2d2d]/10">
               <div className="flex items-center gap-3 flex-wrap">
                 <Sparkles className="h-6 w-6 text-[#ff4d4d]" strokeWidth={2.5} />
                 <span className="font-heading font-bold text-xl md:text-2xl text-[#2d2d2d]">
-                  Genie Intelligence Reasoning Trace
+                  Genie Intelligence Answer
                 </span>
                 
                 {/* PROMINENT REAL GENIE / GRAPH INTELLIGENCE BADGE */}
@@ -198,9 +206,28 @@ export function QueryInterface({ onRunQuery, response, isLoading }: QueryInterfa
               )}
             </div>
 
+            {/* Clean Answer Explanation */}
             <p className="text-lg md:text-xl font-hand text-[#2d2d2d]/90 leading-relaxed whitespace-pre-line">
               {response.explanation}
             </p>
+
+            {/* Sleek Databricks Generated SQL Code Box (Only shown if sqlQuery exists) */}
+            {response.sqlQuery && (
+              <div className="mt-4 p-4 bg-[#1e1e1e] border-2 border-[#2d2d2d] rounded-xl sketch-shadow font-mono text-xs text-[#a9b7c6] space-y-2">
+                <div className="flex items-center justify-between text-white font-bold">
+                  <div className="flex items-center gap-2">
+                    <Code2 className="h-4 w-4 text-[#ff4d4d]" strokeWidth={2.5} />
+                    <span>Generated Databricks SQL Query</span>
+                  </div>
+                  <span className="text-[10px] px-2.5 py-0.5 bg-[#2d5da1] text-white rounded-full font-sans">
+                    Unity Catalog (`campus_genie`)
+                  </span>
+                </div>
+                <pre className="overflow-x-auto p-3 bg-[#111111] rounded-lg border border-white/10 text-emerald-400 font-mono text-xs leading-relaxed">
+                  {response.sqlQuery}
+                </pre>
+              </div>
+            )}
           </div>
 
           {/* Opportunity Path Cards Grid */}
@@ -208,9 +235,9 @@ export function QueryInterface({ onRunQuery, response, isLoading }: QueryInterfa
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <h3 className="font-heading font-bold text-2xl sm:text-3xl text-[#2d2d2d] flex items-center gap-3">
-                  <span>🗺️ Sequenced Opportunity Path</span>
+                  <span>🗺️ Opportunity Path Cards</span>
                   <span className="text-xs font-hand font-bold px-3 py-1 bg-[#fce7f3] border-2 border-[#2d2d2d] wobbly-pill">
-                    {response.steps.length} Steps Generated
+                    {response.steps.length} Opportunities Displayed
                   </span>
                 </h3>
               </div>
