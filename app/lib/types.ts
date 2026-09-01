@@ -21,6 +21,23 @@ export interface OpportunityStep {
   noteColor?: 'yellow' | 'cyan' | 'pink' | 'mint';
   isModified?: boolean;
   originalTitle?: string;
+  // Extended detailed metadata fields
+  mentorOrSupervisor?: string;
+  locationOrDept?: string;
+  durationOrDates?: string;
+  stipendOrPackage?: string;
+  techStack?: string[];
+}
+
+export interface StudentProfileBadge {
+  studentName: string;
+  initials: string;
+  role: string;
+  company: string;
+  packageLpa: number;
+  department?: string;
+  year?: number;
+  availableHours?: number;
 }
 
 export interface GenieResponse {
@@ -31,6 +48,7 @@ export interface GenieResponse {
   whatIfConstraint?: string;
   conversationId?: string;
   source?: 'genie' | 'fixture';
+  studentProfile?: StudentProfileBadge;
   placementTarget?: {
     role: string;
     company: string;

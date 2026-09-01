@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Clock, Unlock, CheckCircle2, AlertCircle, Bookmark } from 'lucide-react';
+import { Clock, Unlock, CheckCircle2, AlertCircle, Bookmark, MapPin, GraduationCap, Trophy, Code2, Calendar } from 'lucide-react';
 import { OpportunityStep } from '@/lib/types';
 
 interface OpportunityCardProps {
@@ -20,7 +20,7 @@ export function OpportunityCard({ step, index }: OpportunityCardProps) {
 
   const noteColorClass = bgColors[step.noteColor || 'yellow'] || bgColors.yellow;
 
-  // Slight random rotation for hand-drawn index card feel
+  // Slight rotation for hand-drawn index card feel
   const rotations = ['-rotate-1', 'rotate-1', '-rotate-2', 'rotate-2'];
   const rotationClass = rotations[index % rotations.length];
 
@@ -34,9 +34,9 @@ export function OpportunityCard({ step, index }: OpportunityCardProps) {
         <Bookmark className="h-5 w-5 fill-[#ff4d4d]" strokeWidth={2.5} />
       </div>
 
-      <div>
+      <div className="space-y-4">
         {/* Card Header */}
-        <div className="flex items-center gap-2 mb-3.5 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap">
           <span className="font-heading font-bold text-sm px-3.5 py-1 bg-white border-2 border-[#2d2d2d] wobbly-pill sketch-shadow-sm text-[#2d2d2d]">
             Step {step.stepNumber}
           </span>
@@ -51,7 +51,7 @@ export function OpportunityCard({ step, index }: OpportunityCardProps) {
         </div>
 
         {/* Title with Scribble-out if modified */}
-        <div className="mb-4">
+        <div>
           {step.isModified && step.originalTitle && (
             <div className="mb-1 text-xs text-[#ff4d4d] font-bold">
               <span className="scribble-strikethrough font-mono">{step.originalTitle}</span>
@@ -62,7 +62,31 @@ export function OpportunityCard({ step, index }: OpportunityCardProps) {
           </h3>
         </div>
 
-        {/* Card Details */}
+        {/* Extended Metadata Ribbon (Mentor, Location, Package/Stipend, Dates) */}
+        <div className="space-y-2 text-xs font-hand text-[#2d2d2d]/90">
+          {step.mentorOrSupervisor && (
+            <div className="flex items-center gap-2 bg-white/70 px-3 py-1.5 rounded-md border border-[#2d2d2d]/20">
+              <GraduationCap className="h-3.5 w-3.5 text-[#2d5da1] shrink-0" strokeWidth={2.5} />
+              <span><strong>Mentor/Supervisor: </strong>{step.mentorOrSupervisor}</span>
+            </div>
+          )}
+
+          {step.locationOrDept && (
+            <div className="flex items-center gap-2 bg-white/70 px-3 py-1.5 rounded-md border border-[#2d2d2d]/20">
+              <MapPin className="h-3.5 w-3.5 text-[#ff4d4d] shrink-0" strokeWidth={2.5} />
+              <span><strong>Location/Dept: </strong>{step.locationOrDept}</span>
+            </div>
+          )}
+
+          {step.stipendOrPackage && (
+            <div className="flex items-center gap-2 bg-emerald-50 text-emerald-900 px-3 py-1.5 rounded-md border border-[#2d2d2d]/20 font-bold">
+              <Trophy className="h-3.5 w-3.5 text-emerald-700 shrink-0" strokeWidth={2.5} />
+              <span><strong>Package/Reward: </strong>{step.stipendOrPackage}</span>
+            </div>
+          )}
+        </div>
+
+        {/* Card Core Details */}
         <div className="space-y-3 text-sm text-[#2d2d2d]/90 font-hand">
           {/* Why it fits */}
           <div className="flex items-start gap-2.5 bg-white/70 p-3 rounded-lg border border-[#2d2d2d]/20">
@@ -73,7 +97,7 @@ export function OpportunityCard({ step, index }: OpportunityCardProps) {
             </div>
           </div>
 
-          {/* Prerequisites & Time */}
+          {/* Prerequisites & Commitment */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             <div className="flex items-center gap-2 bg-white/70 p-2.5 rounded-lg border border-[#2d2d2d]/20">
               <AlertCircle className="h-4 w-4 text-[#2d5da1] shrink-0" strokeWidth={2.5} />
@@ -89,6 +113,26 @@ export function OpportunityCard({ step, index }: OpportunityCardProps) {
               </span>
             </div>
           </div>
+
+          {/* Tech Stack Pills */}
+          {step.techStack && step.techStack.length > 0 && (
+            <div className="space-y-1 pt-1">
+              <div className="text-xs font-bold text-[#2d2d2d]/80 flex items-center gap-1">
+                <Code2 className="h-3.5 w-3.5 text-[#2d5da1]" strokeWidth={2.5} />
+                <span>Technologies & Skills Taught:</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {step.techStack.map((tech, tIdx) => (
+                  <span
+                    key={tIdx}
+                    className="text-[11px] font-bold px-2.5 py-0.5 bg-white border border-[#2d2d2d] rounded-md sketch-shadow-sm text-[#2d2d2d]"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
