@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getFixtureForQuery } from "@/lib/fixtures";
 
+export const dynamic = "force-dynamic";
+
+export async function GET() {
+  return NextResponse.json({ status: "active", engine: "Databricks Genie Opportunity Graph" });
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -36,7 +42,6 @@ export async function POST(req: NextRequest) {
 
         if (response.ok) {
           const liveData = await response.json();
-          // Map real Genie conversation payload if format matches
           return NextResponse.json({
             ...getFixtureForQuery(query),
             rawGeniePayload: liveData,
@@ -53,7 +58,6 @@ export async function POST(req: NextRequest) {
       result.isWhatIf = true;
     }
 
-    // Optional simulated small network latency for realism (150ms)
     await new Promise((resolve) => setTimeout(resolve, 150));
 
     return NextResponse.json(result);

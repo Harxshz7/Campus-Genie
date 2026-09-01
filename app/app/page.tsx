@@ -26,7 +26,6 @@ export default function Home() {
     setActiveQuery(queryText);
 
     try {
-      // Call our API proxy
       const res = await fetch("/api/genie", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -37,7 +36,6 @@ export default function Home() {
         const data: GenieResponse = await res.json();
         setActiveResponse(data);
       } else {
-        // Fallback directly to fixture logic
         setActiveResponse(getFixtureForQuery(queryText));
       }
     } catch (err) {
@@ -45,7 +43,6 @@ export default function Home() {
       setActiveResponse(getFixtureForQuery(queryText));
     } finally {
       setIsLoading(false);
-      // Smooth scroll down to synthesized path
       setTimeout(() => {
         pathSectionRef.current?.scrollIntoView({ behavior: "smooth" });
       }, 100);
@@ -61,7 +58,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-white flex flex-col justify-between selection:bg-black selection:text-white">
+    <main className="min-h-screen bg-background flex flex-col justify-between selection:bg-pure-black selection:text-pure-white">
       <Header />
 
       <Hero
