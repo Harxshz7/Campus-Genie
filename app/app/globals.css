@@ -9,13 +9,17 @@
   body {
     font-family: var(--font-body);
     background-color: #fdfbf7;
-    color: #2d2d2d;
-    background-image: radial-gradient(#e5e0d8 1px, transparent 1px);
+    color: #111111;
+    background-image: radial-gradient(#e2ddd4 1px, transparent 1px);
     background-size: 20px 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+    color: #111111;
   }
 }
 
@@ -72,7 +76,7 @@
   box-shadow: 1px 1px 0px #2d2d2d;
 }
 
-/* Focus Visible Blue Ring (Accessibility constraint) */
+/* Focus Visible Blue Ring */
 input:focus-visible, textarea:focus-visible, button:focus-visible {
   outline: 3px solid #2d5da1;
   outline-offset: 2px;
