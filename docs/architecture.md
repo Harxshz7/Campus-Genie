@@ -48,7 +48,7 @@ Campus Opportunity Radar is a **data-first intelligence platform** that transfor
 │   ┌─────────────────────────────────────────────────────────┐   │
 │   │              Databricks Unity Catalog                    │   │
 │   │                                                          │   │
-│   │   Catalog: campus_radar                                  │   │
+│   │   Catalog: campus_genie                                  │   │
 │   │   Schema:  opportunity_graph                             │   │
 │   │                                                          │   │
 │   │   ┌──────────┐  ┌──────────┐  ┌───────────────┐        │   │

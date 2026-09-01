@@ -20,12 +20,22 @@ In your Databricks workspace:
 2. Click **Create Catalog** → Name: `campus_radar`
 3. Inside `campus_radar`, click **Create Schema** → Name: `opportunity_graph`
 
-Your namespace will be: `campus_radar.opportunity_graph`
+Your catalog and schema:
+- Catalog: `campus_genie`
+- Schema: `opportunity_graph` (or `default` schema under `campus_genie`)
 
-> **If using Community Edition** (no Unity Catalog): Use the default `hive_metastore` catalog and create a database:
+SQL command to run in SQL Editor:
+```sql
+CREATE CATALOG IF NOT EXISTS campus_genie;
+USE CATALOG campus_genie;
+CREATE SCHEMA IF NOT EXISTS opportunity_graph;
+USE SCHEMA opportunity_graph;
+```
+
+> **If using Community Edition / standard schema**:
 > ```sql
-> CREATE DATABASE IF NOT EXISTS campus_opportunity_radar;
-> USE campus_opportunity_radar;
+> CREATE SCHEMA IF NOT EXISTS campus_genie;
+> USE campus_genie;
 > ```
 
 ---

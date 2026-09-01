@@ -60,8 +60,8 @@ def generate_notebook_code():
     print("─" * 70)
     print("""
 -- Run this in a SQL cell
-CREATE CATALOG IF NOT EXISTS campus_radar;
-USE CATALOG campus_radar;
+CREATE CATALOG IF NOT EXISTS campus_genie;
+USE CATALOG campus_genie;
 CREATE SCHEMA IF NOT EXISTS opportunity_graph;
 USE SCHEMA opportunity_graph;
 """)
@@ -72,7 +72,7 @@ USE SCHEMA opportunity_graph;
     print("─" * 70)
     print("""
 # INSTRUCTIONS:
-# 1. In Databricks, go to Catalog > campus_radar > opportunity_graph
+# 1. In Databricks, go to Catalog > campus_genie > opportunity_graph (or default schema under campus_genie)
 # 2. Click "Create Table" > "Upload File"
 # 3. Upload each CSV file from data/raw/ in this order:
 #
@@ -89,10 +89,10 @@ USE SCHEMA opportunity_graph;
     print("CELL 3: Programmatic Loading (if CSVs are on DBFS)")
     print("─" * 70)
     print("""
-# Upload CSVs to DBFS first:  databricks fs cp data/raw/ dbfs:/FileStore/campus_radar/ --recursive
+# Upload CSVs to DBFS first:  databricks fs cp data/raw/ dbfs:/FileStore/campus_genie/ --recursive
 
-base_path = "/FileStore/campus_radar/"
-catalog_schema = "campus_radar.opportunity_graph"
+base_path = "/FileStore/campus_genie/"
+catalog_schema = "campus_genie.opportunity_graph"
 
 tables = [
     "skills", "students", "student_skills", "faculty",
@@ -116,7 +116,7 @@ for table in tables:
     print("─" * 70)
     print("-- Run this in a SQL cell")
     for table, comment in TABLE_COMMENTS.items():
-        print(f"COMMENT ON TABLE campus_radar.opportunity_graph.{table} IS '{comment}';")
+        print(f"COMMENT ON TABLE campus_genie.opportunity_graph.{table} IS '{comment}';")
 
     # Cell 5: Verification
     print("\n" + "─" * 70)
@@ -124,22 +124,22 @@ for table in tables:
     print("─" * 70)
     print("""
 -- Run this in a SQL cell
-SELECT 'students' as tbl, COUNT(*) as cnt FROM campus_radar.opportunity_graph.students
-UNION ALL SELECT 'skills', COUNT(*) FROM campus_radar.opportunity_graph.skills
-UNION ALL SELECT 'student_skills', COUNT(*) FROM campus_radar.opportunity_graph.student_skills
-UNION ALL SELECT 'projects', COUNT(*) FROM campus_radar.opportunity_graph.projects
-UNION ALL SELECT 'project_skills', COUNT(*) FROM campus_radar.opportunity_graph.project_skills
-UNION ALL SELECT 'clubs', COUNT(*) FROM campus_radar.opportunity_graph.clubs
-UNION ALL SELECT 'club_skills', COUNT(*) FROM campus_radar.opportunity_graph.club_skills
-UNION ALL SELECT 'events', COUNT(*) FROM campus_radar.opportunity_graph.events
-UNION ALL SELECT 'event_skills', COUNT(*) FROM campus_radar.opportunity_graph.event_skills
-UNION ALL SELECT 'faculty', COUNT(*) FROM campus_radar.opportunity_graph.faculty
-UNION ALL SELECT 'research', COUNT(*) FROM campus_radar.opportunity_graph.research
-UNION ALL SELECT 'research_skills', COUNT(*) FROM campus_radar.opportunity_graph.research_skills
-UNION ALL SELECT 'hackathons', COUNT(*) FROM campus_radar.opportunity_graph.hackathons
-UNION ALL SELECT 'hackathon_skills', COUNT(*) FROM campus_radar.opportunity_graph.hackathon_skills
-UNION ALL SELECT 'placements', COUNT(*) FROM campus_radar.opportunity_graph.placements
-UNION ALL SELECT 'placement_skills', COUNT(*) FROM campus_radar.opportunity_graph.placement_skills
+SELECT 'students' as tbl, COUNT(*) as cnt FROM campus_genie.opportunity_graph.students
+UNION ALL SELECT 'skills', COUNT(*) FROM campus_genie.opportunity_graph.skills
+UNION ALL SELECT 'student_skills', COUNT(*) FROM campus_genie.opportunity_graph.student_skills
+UNION ALL SELECT 'projects', COUNT(*) FROM campus_genie.opportunity_graph.projects
+UNION ALL SELECT 'project_skills', COUNT(*) FROM campus_genie.opportunity_graph.project_skills
+UNION ALL SELECT 'clubs', COUNT(*) FROM campus_genie.opportunity_graph.clubs
+UNION ALL SELECT 'club_skills', COUNT(*) FROM campus_genie.opportunity_graph.club_skills
+UNION ALL SELECT 'events', COUNT(*) FROM campus_genie.opportunity_graph.events
+UNION ALL SELECT 'event_skills', COUNT(*) FROM campus_genie.opportunity_graph.event_skills
+UNION ALL SELECT 'faculty', COUNT(*) FROM campus_genie.opportunity_graph.faculty
+UNION ALL SELECT 'research', COUNT(*) FROM campus_genie.opportunity_graph.research
+UNION ALL SELECT 'research_skills', COUNT(*) FROM campus_genie.opportunity_graph.research_skills
+UNION ALL SELECT 'hackathons', COUNT(*) FROM campus_genie.opportunity_graph.hackathons
+UNION ALL SELECT 'hackathon_skills', COUNT(*) FROM campus_genie.opportunity_graph.hackathon_skills
+UNION ALL SELECT 'placements', COUNT(*) FROM campus_genie.opportunity_graph.placements
+UNION ALL SELECT 'placement_skills', COUNT(*) FROM campus_genie.opportunity_graph.placement_skills
 ORDER BY tbl;
 """)
 
@@ -151,9 +151,9 @@ ORDER BY tbl;
 -- Run this in a SQL cell
 SELECT s.name, s.year, s.department, s.career_goal, s.available_hours_per_week,
        sk.skill_name, ss.proficiency_level
-FROM campus_radar.opportunity_graph.students s
-JOIN campus_radar.opportunity_graph.student_skills ss ON s.student_id = ss.student_id
-JOIN campus_radar.opportunity_graph.skills sk ON ss.skill_id = sk.skill_id
+FROM campus_genie.opportunity_graph.students s
+JOIN campus_genie.opportunity_graph.student_skills ss ON s.student_id = ss.student_id
+JOIN campus_genie.opportunity_graph.skills sk ON ss.skill_id = sk.skill_id
 WHERE s.student_id = 1
 ORDER BY sk.skill_name;
 """)
