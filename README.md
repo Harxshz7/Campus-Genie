@@ -192,7 +192,15 @@ Follow the step-by-step guide in [docs/genie-setup.md](docs/genie-setup.md) to:
 3. Configure system instructions
 4. Test with sample questions
 
-### Step 4: Demo!
+### Step 4: Run the Student-Facing Web App (Optional Frontend)
+```bash
+cd app
+npm install
+npm run dev
+```
+Open `http://localhost:3000` to interact with Campus Genie through a student-facing interface with pre-loaded prompts and What-If scenario chips!
+
+### Step 5: Demo!
 Use the questions in [genie/sample_questions.md](genie/sample_questions.md) to showcase the full capability.
 
 ---
